@@ -1,0 +1,18 @@
+---
+type: template
+params:
+  dtype:
+    required: false
+    default: float
+    options: [float, double]
+
+declaration:
+  type: record
+  fields:
+    - name: translation
+      type: geometry.Vector3D
+      dtype: $params.dtype
+
+    - name: rotation
+      type: geometry.Quaternion
+      dtype: $params.dtype

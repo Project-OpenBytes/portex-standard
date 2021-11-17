@@ -1,0 +1,37 @@
+---
+type: template
+params:
+  categoryDelimiter:
+    required: false
+    default: null
+
+  stuffIds:
+    required: true
+
+  thingIds:
+    required: true
+
+  attributes:
+    required: false
+    default: null
+
+declaration:
+  type: record
+  fields:
+    - name: mask
+      type: bytes
+
+    - name: info
+      type: table
+      index: id
+      columns:
+        - name: id
+          type: int
+
+        - name: categoryId
+          type: int
+
+        - name: attribute
+          existIf: $params.attributes != null
+          type: label.Attribute
+          attributes: $params.attributes

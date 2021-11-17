@@ -1,0 +1,10 @@
+---
+type: template
+params:
+  isContinous:
+    required: false
+    default: false
+    options: [true, false]
+
+declaration:
+  type: bytes

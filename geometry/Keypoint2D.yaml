@@ -1,0 +1,28 @@
+---
+type: template
+params:
+  dtype:
+    required: false
+    default: int
+
+  visible:
+    required: false
+    default: null
+    options: ["BINARY", "TERNARY", null]
+
+declaration:
+  type: record
+  fields:
+    - name: x
+      type: $params.dtype
+
+    - name: y
+      type: $params.dtype
+
+    - name: v
+      existIf: $params.visible != null
+      type: enum
+      values:
+        if: $params.visible == "BINARY"
+        then: [0, 1]
+        else: [0, 1, 2]

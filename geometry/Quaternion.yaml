@@ -1,0 +1,22 @@
+---
+type: template
+params:
+  dtype:
+    required: false
+    default: float
+    options: [float, double]
+
+declaration:
+  type: record
+  fields:
+    - name: w
+      type: $params.dtype
+
+    - name: x
+      type: $params.dtype
+
+    - name: y
+      type: $params.dtype
+
+    - name: z
+      type: $params.dtype

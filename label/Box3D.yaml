@@ -1,0 +1,45 @@
+---
+type: template
+params:
+  dtype:
+    required: false
+    default: float
+    options: [float, double]
+
+  categories:
+    required: false
+    default: null
+
+  categoryDelimiter:
+    required: false
+    default: null
+
+  attributes:
+    required: false
+    default: null
+
+declaration:
+  type: record
+  fields:
+    - name: translation
+      type: geometry.Vector3D
+      dtype: $params.dtype
+
+    - name: rotation
+      type: geometry.Quaternion
+      dtype: $params.dtype
+
+    - name: size
+      type: geometry.Vector3D
+      dtype: $params.dtype
+
+    - name: category
+      existIf: $params.categories != null
+      type: label.Category
+      categories: $params.categories
+      categoryDelimiter: $params.categoryDelimiter
+
+    - name: attribute
+      existIf: $params.attributes != null
+      type: label.Attribute
+      attributes: $params.attributes

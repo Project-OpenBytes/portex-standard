@@ -1,0 +1,17 @@
+---
+type: template
+params:
+  attributes:
+    required: false
+    default: null
+
+declaration:
+  type: record
+  fields:
+    - name: caption
+      type: string
+
+    - name: attribute
+      existIf: $params.attributes != null
+      type: label.Attribute
+      attributes: $params.attributes

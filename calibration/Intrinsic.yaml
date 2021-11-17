@@ -1,0 +1,20 @@
+---
+type: template
+params:
+  dtype:
+    required: false
+    default: float
+    options: [float, double]
+
+declaration:
+  type: record
+  fields:
+    - name: cameraMatrix
+      type: tensor
+      shape: [3, 3]
+      dtype: $params.dtype
+
+    - name: distortionCoefficients
+      type: array
+      items:
+        type: $params.dtype

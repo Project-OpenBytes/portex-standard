@@ -1,0 +1,23 @@
+---
+type: template
+params:
+  isSample:
+    required: false
+    default: false
+    options: [true, false]
+
+  sampleRate:
+    required: false
+    default: null
+
+declaration:
+  type: table
+  columns:
+    - name: text
+      type: string
+
+    - name: begin
+      type: float
+
+    - name: end
+      type: float

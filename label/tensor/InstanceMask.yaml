@@ -1,0 +1,44 @@
+---
+type: template
+params:
+  shape:
+    required: true
+
+  dtype:
+    required: true
+
+  isTracking:
+    required: false
+    default: false
+    options: [true, false]
+
+  categoryDelimiter:
+    required: false
+    default: null
+
+  categoryIds:
+    required: true
+
+  attributes:
+    required: false
+    default: null
+
+declaration:
+  type: record
+  fields:
+    - name: mask
+      type: tensor
+      shape: $params.shape
+      dtype: $params.dtype
+
+    - name: info
+      existIf: $params.attributes != null
+      type: table
+      index: id
+      columns:
+        - name: id
+          type: int
+
+        - name: attribute
+          type: label.Attribute
+          attributes: $params.attributes

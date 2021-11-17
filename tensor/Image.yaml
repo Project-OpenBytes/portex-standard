@@ -1,0 +1,18 @@
+---
+type: template
+params:
+  isContinous:
+    required: false
+    default: false
+    options: [true, false]
+
+  shape:
+    required: true
+
+  dtype:
+    required: true
+
+declaration:
+  type: tensor
+  shape: $params.shape
+  dtype: $params.dtype

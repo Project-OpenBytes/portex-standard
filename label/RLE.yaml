@@ -1,0 +1,34 @@
+---
+type: template
+params:
+  categories:
+    required: false
+    default: null
+
+  categoryDelimiter:
+    required: false
+    default: null
+
+  attributes:
+    required: false
+    default: null
+
+declaration:
+  type: record
+  fields:
+    - name: code
+      type: array
+      items:
+        type: int
+        minimum: 0
+
+    - name: category
+      existIf: $params.categories != null
+      type: label.Category
+      categories: $params.categories
+      categoryDelimiter: $params.categoryDelimiter
+
+    - name: attribute
+      type: label.Attribute
+      existIf: $params.attributes != null
+      attributes: $params.attributes

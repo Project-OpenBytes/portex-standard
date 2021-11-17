@@ -1,0 +1,12 @@
+---
+type: template
+params:
+  dtype:
+    required: false
+    default: int
+
+declaration:
+  type: array
+  items:
+    type: geometry.Vector2D
+    dtype: $params.dtype

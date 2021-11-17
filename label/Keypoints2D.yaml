@@ -1,0 +1,56 @@
+---
+type: template
+params:
+  dtype:
+    required: false
+    default: int
+
+  number:
+    required: true
+
+  names:
+    required: false
+    default: null
+
+  skeleton:
+    required: false
+    default: null
+
+  visible:
+    required: false
+    default: null
+    options: [null, "BINARY", "TERNARY"]
+
+  categories:
+    required: false
+    default: null
+
+  categoryDelimiter:
+    required: false
+    default: null
+
+  attributes:
+    required: false
+    default: null
+
+declaration:
+  type: record
+  fields:
+    - name: vertices
+      type: array
+      length: number
+      items:
+        type: geometry.Keypoint2D
+        dtype: $params.dtype
+        visible: $params.visible
+
+    - name: category
+      existIf: $params.categories != null
+      type: geometry.Category
+      categories: $params.categories
+      categoryDelimiter: $params.categoryDelimiter
+
+    - name: attribute
+      existIf: $params.attributes != null
+      type: label.Attribute
+      attributes: $params.attributes

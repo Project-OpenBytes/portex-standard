@@ -1,0 +1,13 @@
+---
+type: template
+params:
+  categories:
+    required: true
+
+  categoryDelimiter:
+    required: false
+    default: null
+
+declaration:
+  type: enum
+  values: $params.categories

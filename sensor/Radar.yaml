@@ -1,0 +1,9 @@
+---
+type: template
+params:
+  fields:
+    required: true
+
+declaration:
+  type: record
+  fields: $params.fields

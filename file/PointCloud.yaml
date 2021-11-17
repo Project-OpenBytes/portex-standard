@@ -1,0 +1,14 @@
+---
+type: template
+params:
+  isContinous:
+    required: false
+    default: false
+    options: [true, false]
+
+  fields:
+    required: false
+    default: [X, Y, Z, Intensity]
+
+declaration:
+  type: bytes

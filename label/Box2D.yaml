@@ -1,0 +1,44 @@
+---
+type: template
+params:
+  dtype:
+    required: false
+    default: int
+
+  categories:
+    required: false
+    default: null
+
+  categoryDelimiter:
+    required: false
+    default: null
+
+  attributes:
+    required: false
+    default: null
+
+declaration:
+  type: record
+  fields:
+    - name: xmin
+      type: $params.dtype
+
+    - name: ymin
+      type: $params.dtype
+
+    - name: xmax
+      type: $params.dtype
+
+    - name: ymax
+      type: $params.dtype
+
+    - name: category
+      existIf: $params.categories != null
+      type: label.Category
+      categories: $params.categories
+      categoryDelimiter: $params.categoryDelimiter
+
+    - name: attribute
+      existIf: $params.attributes != null
+      type: label.Attribute
+      attributes: $params.attributes
