@@ -45,4 +45,9 @@ columns:
 
         - name: pose
           type: enum
-          values: [Frontal, Left, Rear, Right, Unspecified]
+          values:
+            - Frontal
+            - Left
+            - Rear
+            - Right
+            - Unspecified
