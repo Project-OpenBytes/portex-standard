@@ -199,10 +199,10 @@ columns:
           [4, 6],
         ]
 
-  - name: multi_polygon
+  - name: multi_polygons
     type: array
     items:
-      type: label.Keypoints2D
+      type: label.MultiPolygon
       categoryDelimiter: .
       categories: *categories
 
