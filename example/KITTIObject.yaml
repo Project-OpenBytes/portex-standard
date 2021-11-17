@@ -26,12 +26,16 @@ columns:
             type: boolean
 
           - name: occluded
-            type: boolean
+            values:
+              - 0 # fully visible
+              - 1 # partly occluded
+              - 2 # largely occluded
+              - 3 # unknown
 
           - name: alpha
             type: float
-            minimum: 0
-            maximun: 1
+            minimum: -3.1416
+            maximun: 3.1416
 
       - name: extrinsic
         type: calibration.Extrinsic
