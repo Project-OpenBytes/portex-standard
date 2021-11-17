@@ -1,0 +1,111 @@
+---
+version: v1.0.0
+type: table
+columns:
+  - name: filename
+    type: string
+
+  - name: image
+    type: file.Image
+
+  - name: attribute
+    type: label.Attribute
+    attributes:
+      - name: weather
+        type: enum
+        values:
+          - clear
+          - foggy
+          - overcast
+          - partly cloudy
+          - rainy
+          - snowy
+          - undefined
+
+      - name: scene
+        type: enum
+        values:
+          - city street
+          - gas stations
+          - highway
+          - parking lot
+          - residential
+          - tunnel
+          - undefined
+
+      - name: timeofday
+        type: enum
+        values:
+          - daytime
+          - night
+          - dawn/dusk
+          - undefined
+
+  - name: box2ds
+    type: array
+    items:
+      type: label.Box2D
+      categories:
+        - bicycle
+        - bus
+        - car
+        - motorcycle
+        - other person
+        - other vehicle
+        - pedestrian
+        - rider
+        - traffic light
+        - traffic sign
+        - trailer
+        - train
+        - truck
+
+      attributes:
+        - name: occluded
+          type: boolean
+
+        - name: truncated
+          type: boolean
+
+        - name: trafficLightColor
+          type: enum
+          values:
+            - red
+            - green
+            - yellow
+            - null
+
+  - name: polygons
+    type: array
+    items:
+      type: label.Polygon
+      categories:
+        - direct
+        - alternative
+        - unknown
+
+  - name: polyline2ds
+    type: array
+    items:
+      type: label.Polyline2D
+      categories:
+        - crosswalk
+        - double other
+        - double white
+        - double yellow
+        - road curb
+        - single other
+        - single white
+        - single yellow
+
+      attributes:
+        - name: laneDirection
+          type: enum
+          values:
+            - vertical
+            - parallel
+        - name: laneStyle
+          type: enum
+          values:
+            - solid
+            - dashed
