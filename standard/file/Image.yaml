@@ -6,5 +6,10 @@ params:
     default: false
     options: [true, false]
 
+  distortStatus:
+    required: false
+    default: "RAW"
+    options: ["RAW", "UNDISTORTED", "RECTIFIED"]
+
 declaration:
   type: bytes

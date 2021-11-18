@@ -4,11 +4,6 @@ params:
   fields:
     required: true
 
-  distortStatus:
-    required: false
-    default: "RAW"
-    options: ["RAW", "UNDISTORTED", "RECTIFIED"]
-
 declaration:
   type: record
   fields: $params.fields
