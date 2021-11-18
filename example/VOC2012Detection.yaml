@@ -33,6 +33,7 @@ columns:
         - sofa
         - train
         - tvmonitor
+
       attributes:
         - name: difficult
           type: boolean

@@ -21,6 +21,7 @@ columns:
           - Pedestrian
           - Truck
           - Van
+
         attributes:
           - name: truncated
             type: boolean
