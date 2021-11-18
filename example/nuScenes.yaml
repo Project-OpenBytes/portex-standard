@@ -10,6 +10,7 @@ columns:
 
       - name: point_cloud
         type: file.PointCloud
+        isContinous: true
         fields: [X, Y, Z, Intensity, Ring]
 
       - name: timestamp
@@ -77,6 +78,7 @@ columns:
 
       - name: image
         type: file.Image
+        isContinous: true
 
       - name: timestamp
         type: int
@@ -115,6 +117,7 @@ columns:
 
       - name: point_cloud
         type: file.PointCloud
+        isContinous: true
 
       - name: timestamp
         type: int
