@@ -71,7 +71,7 @@ columns:
 
   - name: CAM_FRONT
     type: sensor.Camera
-    fields:
+    fields: &cameraFields
       - name: filename
         type: string
 
@@ -89,97 +89,27 @@ columns:
 
   - name: CAM_FRONT_LEFT
     type: sensor.Camera
-    fields:
-      - name: filename
-        type: string
-
-      - name: image
-        type: file.Image
-
-      - name: timestamp
-        type: int
-
-      - name: extrinsic
-        type: calibration.Extrinsic
-
-      - name: intrinsic
-        type: calibration.Intrinsic
+    fields: *cameraFields
 
   - name: CAM_FRONT_RIGHT
     type: sensor.Camera
-    fields:
-      - name: filename
-        type: string
-
-      - name: image
-        type: file.Image
-
-      - name: timestamp
-        type: int
-
-      - name: extrinsic
-        type: calibration.Extrinsic
-
-      - name: intrinsic
-        type: calibration.Intrinsic
+    fields: *cameraFields
 
   - name: CAM_BACK
     type: sensor.Camera
-    fields:
-      - name: filename
-        type: string
-
-      - name: image
-        type: file.Image
-
-      - name: timestamp
-        type: int
-
-      - name: extrinsic
-        type: calibration.Extrinsic
-
-      - name: intrinsic
-        type: calibration.Intrinsic
+    fields: *cameraFields
 
   - name: CAM_BACK_LEFT
     type: sensor.Camera
-    fields:
-      - name: filename
-        type: string
-
-      - name: image
-        type: file.Image
-
-      - name: timestamp
-        type: int
-
-      - name: extrinsic
-        type: calibration.Extrinsic
-
-      - name: intrinsic
-        type: calibration.Intrinsic
+    fields: *cameraFields
 
   - name: CAM_BACK_RIGHT
     type: sensor.Camera
-    fields:
-      - name: filename
-        type: string
-
-      - name: image
-        type: file.Image
-
-      - name: timestamp
-        type: int
-
-      - name: extrinsic
-        type: calibration.Extrinsic
-
-      - name: intrinsic
-        type: calibration.Intrinsic
+    fields: *cameraFields
 
   - name: RADAR_FRONT
     type: sensor.Radar
-    fields:
+    fields: &radarFields
       - name: filename
         type: string
 
@@ -194,60 +124,16 @@ columns:
 
   - name: RADAR_FRONT_LEFT
     type: sensor.Radar
-    fields:
-      - name: filename
-        type: string
-
-      - name: point_cloud
-        type: file.PointCloud
-
-      - name: timestamp
-        type: int
-
-      - name: extrinsic
-        type: calibration.Extrinsic
+    fields: *radarFields
 
   - name: RADAR_FRONT_RIGHT
     type: sensor.Radar
-    fields:
-      - name: filename
-        type: string
-
-      - name: point_cloud
-        type: file.PointCloud
-
-      - name: timestamp
-        type: int
-
-      - name: extrinsic
-        type: calibration.Extrinsic
+    fields: *radarFields
 
   - name: RADAR_BACK_LEFT
     type: sensor.Radar
-    fields:
-      - name: filename
-        type: string
-
-      - name: point_cloud
-        type: file.PointCloud
-
-      - name: timestamp
-        type: int
-
-      - name: extrinsic
-        type: calibration.Extrinsic
+    fields: *radarFields
 
   - name: RADAR_BACK_RIGHT
     type: sensor.Radar
-    fields:
-      - name: filename
-        type: string
-
-      - name: point_cloud
-        type: file.PointCloud
-
-      - name: timestamp
-        type: int
-
-      - name: extrinsic
-        type: calibration.Extrinsic
+    fields: *radarFields
