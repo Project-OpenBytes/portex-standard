@@ -65,7 +65,7 @@ columns:
         type: string
 
       - name: point_cloud
-        type: file.PointCloud
+        type: file.PointCloudBin
 
       - name: box3ds
         type: label.Box3D

@@ -9,7 +9,7 @@ columns:
         type: string
 
       - name: point_cloud
-        type: file.PointCloud
+        type: file.PointCloudBin
         isContinous: true
         fields: [X, Y, Z, Intensity, Ring]
 
