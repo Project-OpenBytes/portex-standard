@@ -20,6 +20,7 @@ columns:
         type: array
         items:
           type: label.Box3D
+          categoryDelimiter: .
           categories:
             - animal                             # All animals, e.g. cats, rats, dogs, deer, birds.
             - human.pedestrian.adult             # Adult subcategory.
