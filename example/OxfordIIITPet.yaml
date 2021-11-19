@@ -1,0 +1,61 @@
+---
+version: v1.0.0
+type: table
+columns:
+  - name: filename
+    type: string
+
+  - name: image
+    type: file.Image
+
+  - name: category
+    type: label.Category
+    categoryDelimiter: .
+    categories:
+      - Cat.Abyssinian
+      - Cat.Bengal
+      - Cat.Birman
+      - Cat.Bombay
+      - Cat.British_Shorthair
+      - Cat.Egyptian_Mau
+      - Cat.Maine_Coon
+      - Cat.Persian
+      - Cat.Ragdoll
+      - Cat.Russian_Blue
+      - Cat.Siamese
+      - Cat.Sphynx
+      - Dog.american_bulldog
+      - Dog.american_pit_bull_terrier
+      - Dog.basset_hound
+      - Dog.beagle
+      - Dog.boxer
+      - Dog.chihuahua
+      - Dog.english_cocker_spaniel
+      - Dog.english_setter
+      - Dog.german_shorthaired
+      - Dog.great_pyrenees
+      - Dog.havanese
+      - Dog.japanese_chin
+      - Dog.keeshond
+      - Dog.leonberger
+      - Dog.miniature_pinscher
+      - Dog.newfoundland
+      - Dog.pomeranian
+      - Dog.pug
+      - Dog.saint_bernard
+      - Dog.samoyed
+      - Dog.scottish_terrier
+      - Dog.shiba_inu
+      - Dog.staffordshire_bull_terrier
+      - Dog.wheaten_terrier
+      - Dog.yorkshire_terrier
+
+  - name: box2d
+    type: label.Box2D
+
+  - name: semantic_mask
+    type: label.file.SemanticMask
+    categoryIds:
+      1: foreground
+      2: background
+      3: contour
