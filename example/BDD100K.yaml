@@ -104,6 +104,7 @@ columns:
           values:
             - vertical
             - parallel
+
         - name: laneStyle
           type: enum
           values:
