@@ -1,0 +1,12 @@
+---
+version: v1.0.0
+type: table
+columns:
+  - name: filename
+    type: string
+
+  - name: image_32x32
+    type: file.Image
+
+  - name: image_64x64
+    type: file.Image
