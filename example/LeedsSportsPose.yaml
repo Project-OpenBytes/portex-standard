@@ -1,0 +1,43 @@
+---
+version: v1.0.0
+type: table
+columns:
+  - name: filename
+    type: string
+
+  - name: image
+    type: file.Image
+
+  - name: keypoints2d
+    type: label.Keypoints2D
+    number: 14
+    visible: BINARY
+    names:
+      - Right ankle
+      - Right knee
+      - Right hip
+      - Left hip
+      - Left knee
+      - Left ankle
+      - Right wrist
+      - Right elbow
+      - Right shoulder
+      - Left shoulder
+      - Left elbow
+      - Left wrist
+      - Neck
+      - Head top
+    skeleton:
+      [
+        [0, 1],
+        [1, 2],
+        [3, 4],
+        [4, 5],
+        [6, 7],
+        [7, 8],
+        [9, 10],
+        [10, 11],
+        [12, 13],
+        [12, 2],
+        [12, 3],
+      ]
