@@ -62,6 +62,7 @@ columns:
                   - pedestrian.moving             # The human is moving.
 
             - name: visibility
+              type: enum
               values:
                 - v0-40   # visibility of whole object is between 0 and 40%
                 - v40-60  # visibility of whole object is between 40 and 60%
