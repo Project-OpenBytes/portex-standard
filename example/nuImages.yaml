@@ -44,6 +44,7 @@ columns:
             - vehicle.motorcycle                   # Gasoline or electric powered 2-wheeled vehicle designed to move rapidly (at the speed of standard cars) on the road surface. This category includes all motorcycles, vespas and scooters.
             - vehicle.trailer                      # Any vehicle trailer, both for trucks, cars and bikes.
             - vehicle.truck                        # Vehicles primarily designed to haul cargo including pick-ups, lorrys, trucks and semi-tractors. Trailers hauled after a semi-tractor should be labeled as vehicle.trailer.
+            - vehicle.ego                          # Ego vehicle.
             - flat.drivable_surface                # Surfaces should be regarded with no concern of traffic rules, lanes etc. Exclude any road obstacles. This includes paved and unpaved surfaces
 
           attributes: &attributes
