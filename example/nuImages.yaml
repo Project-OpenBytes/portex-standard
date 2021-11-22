@@ -1,0 +1,100 @@
+---
+version: v1.0.0
+type: table
+columns:
+  - name: CAM_FRONT
+    type: sensor.Camera
+    fields: &cameraFields
+      - name: filename
+        type: string
+
+      - name: image
+        type: file.Image
+        isContinous: true
+
+      - name: timestamp
+        type: int
+
+      - name: box2ds
+        type: array
+        items:
+          type: label.Box2D
+          categoryDelimiter: .
+          categories: &categories
+            - animal                               # All animals, e.g. cats, rats, dogs, deer, birds.
+            - human.pedestrian.adult               # Adult subcategory.
+            - human.pedestrian.child               # Child subcategory.
+            - human.pedestrian.construction_worker # Construction worker
+            - human.pedestrian.personal_mobility   # A small electric or self-propelled vehicle, e.g. skateboard, segway, or scooters, on which the person typically travels in a upright position. Driver and (if applicable) rider should be included in the bounding box along with the vehicle.
+            - human.pedestrian.police_officer      # Police officer.
+            - human.pedestrian.stroller            # Strollers. If a person is in the stroller, include in the annotation.
+            - human.pedestrian.wheelchair          # Wheelchairs. If a person is in the wheelchair, include in the annotation.
+            - movable_object.barrier               # Temporary road barrier placed in the scene in order to redirect traffic. Commonly used at construction sites. This includes concrete barrier, metal barrier and water barrier. No fences.
+            - movable_object.debris                # Movable object that is left on the driveable surface that is too large to be driven over safely, e.g tree branch, full trash bag etc.
+            - movable_object.pushable_pullable     # Objects that a pedestrian may push or pull. For example dolleys, wheel barrows, garbage-bins, or shopping carts.
+            - movable_object.trafficcone           # All types of traffic cone.
+            - static_object.bicycle_rack           # Area or device intended to park or secure the bicycles in a row. It includes all the bikes parked in it and any empty slots that are intended for parking bikes.
+            - vehicle.bicycle                      # Human or electric powered 2-wheeled vehicle designed to travel at lower speeds either on road surface, sidewalks or bike paths.
+            - vehicle.bus.bendy                    # Bendy bus subcategory. Annotate each section of the bendy bus individually.
+            - vehicle.bus.rigid                    # Rigid bus subcategory.
+            - vehicle.car                          # Vehicle designed primarily for personal use, e.g. sedans, hatch-backs, wagons, vans, mini-vans, and jeeps. If the vehicle is designed to carry more than 10 people use vehicle.bus. If it is primarily designed to haul cargo use vehicle.truck.
+            - vehicle.construction                 # Vehicles primarily designed for construction. Typically very slow moving or stationary. Cranes and extremities of construction vehicles are only included in annotations if they interfere with traffic. Trucks used to haul rocks or building materials are considered vehicle.truck rather than construction vehicles.
+            - vehicle.emergency.ambulance          # All types of ambulances.
+            - vehicle.emergency.police             # All types of police vehicles including police bicycles and motorcycles.
+            - vehicle.motorcycle                   # Gasoline or electric powered 2-wheeled vehicle designed to move rapidly (at the speed of standard cars) on the road surface. This category includes all motorcycles, vespas and scooters.
+            - vehicle.trailer                      # Any vehicle trailer, both for trucks, cars and bikes.
+            - vehicle.truck                        # Vehicles primarily designed to haul cargo including pick-ups, lorrys, trucks and semi-tractors. Trailers hauled after a semi-tractor should be labeled as vehicle.trailer.
+            - flat.drivable_surface                # Surfaces should be regarded with no concern of traffic rules, lanes etc. Exclude any road obstacles. This includes paved and unpaved surfaces
+
+          attributes: &attributes
+            - name: attributes
+              type: array
+              items:
+                type: enum
+                values:
+                  - vehicle.moving                       # Vehicle is moving.
+                  - vehicle.stopped                      # Vehicle, with a driver/rider in/on it, is currently stationary but has an intent to move.
+                  - vehicle.parked                       # Vehicle is stationary (usually for longer duration) with no immediate intent to move.
+                  - cycle.with_rider                     # There is a rider on the bicycle or motorcycle.
+                  - cycle.without_rider                  # There is NO rider on the bicycle or motorcycle.
+                  - pedestrian.sitting_lying_down        # The human is sitting or lying down.
+                  - pedestrian.standing                  # The human is standing.
+                  - pedestrian.moving                    # The human is moving.
+                  - vehicle_light.emergency.flashing     # Vehicle is flashing emergency lights.
+                  - vehicle_light.emergency.not_flashing # Vehicle is not flashing emergency lights.
+                  - vertical_position.off_ground         # Object is not on the ground plane, e.g. flying, falling, jumping or positioned in a tree or on a vehicle.
+                  - vertical_position.on_ground          # Object is on the ground plane.
+
+      - name: RLE
+        type: array
+        items:
+          type: label.RLE
+          categoryDelimiter: .
+          categories: *categories
+          attributes: *attributes
+
+      - name: extrinsic
+        type: calibration.Extrinsic
+
+      - name: intrinsic
+        type: calibration.Intrinsic
+
+  - name: CAM_FRONT_LEFT
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: CAM_FRONT_RIGHT
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: CAM_BACK
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: CAM_BACK_LEFT
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: CAM_BACK_RIGHT
+    type: sensor.Camera
+    fields: *cameraFields
