@@ -47,18 +47,19 @@ columns:
             - vehicle.truck                        # Vehicles primarily designed to haul cargo including pick-ups, lorrys, trucks and semi-tractors. Trailers hauled after a semi-tractor should be labeled as vehicle.trailer.
 
           attributes:
-            - name: attribute
-              type: enum
-              values:
-                - null
-                - vehicle.moving                # Vehicle is moving.
-                - vehicle.stopped               # Vehicle, with a driver/rider in/on it, is currently stationary but has an intent to move.
-                - vehicle.parked                # Vehicle is stationary (usually for longer duration) with no immediate intent to move.
-                - cycle.with_rider              # There is a rider on the bicycle or motorcycle.
-                - cycle.without_rider           # There is NO rider on the bicycle or motorcycle.
-                - pedestrian.sitting_lying_down # The human is sitting or lying down.
-                - pedestrian.standing           # The human is standing.
-                - pedestrian.moving             # The human is moving.
+            - name: attributes
+              type: array
+              items:
+                type: enum
+                values:
+                  - vehicle.moving                # Vehicle is moving.
+                  - vehicle.stopped               # Vehicle, with a driver/rider in/on it, is currently stationary but has an intent to move.
+                  - vehicle.parked                # Vehicle is stationary (usually for longer duration) with no immediate intent to move.
+                  - cycle.with_rider              # There is a rider on the bicycle or motorcycle.
+                  - cycle.without_rider           # There is NO rider on the bicycle or motorcycle.
+                  - pedestrian.sitting_lying_down # The human is sitting or lying down.
+                  - pedestrian.standing           # The human is standing.
+                  - pedestrian.moving             # The human is moving.
 
             - name: visibility
               values:
