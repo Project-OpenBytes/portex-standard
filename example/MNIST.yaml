@@ -2,9 +2,6 @@
 version: v1.0.0
 type: table
 columns:
-  - name: filename
-    type: string
-
   - name: image
     type: tensor.Image
     dtype: uint8
