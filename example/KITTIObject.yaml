@@ -1,6 +1,7 @@
 ---
 version: v1.0.0
 type: table
+index: camera_2.filename
 columns:
   - name: camera_2
     type: sensor.Camera

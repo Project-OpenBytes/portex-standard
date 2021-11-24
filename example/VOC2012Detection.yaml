@@ -1,6 +1,7 @@
 ---
 version: v1.0.0
 type: table
+index: filename
 columns:
   - name: filename
     type: string

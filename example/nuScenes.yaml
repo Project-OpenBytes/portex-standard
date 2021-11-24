@@ -1,6 +1,7 @@
 ---
 version: v1.0.0
 type: table
+index: LIDAR_TOP.filename
 columns:
   - name: LIDAR_TOP
     type: sensor.Lidar
