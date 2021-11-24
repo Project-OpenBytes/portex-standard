@@ -1,7 +1,6 @@
 ---
 version: v1.0.0
 type: table
-index: CAM_FRONT.filename
 columns:
   - name: CAM_FRONT
     type: sensor.Camera
