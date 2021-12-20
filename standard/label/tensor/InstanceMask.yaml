@@ -33,12 +33,13 @@ declaration:
 
     - name: info
       existIf: $params.attributes != null
-      type: table
-      index: id
-      columns:
-        - name: id
-          type: int
+      type: array
+      items:
+        type: record
+        fields:
+          - name: id
+            type: int
 
-        - name: attribute
-          type: label.Attribute
-          attributes: $params.attributes
+          - name: attribute
+            type: label.Attribute
+            attributes: $params.attributes

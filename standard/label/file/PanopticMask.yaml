@@ -22,16 +22,17 @@ declaration:
       type: bytes
 
     - name: info
-      type: table
-      index: id
-      columns:
-        - name: id
-          type: int
+      type: array
+      items:
+        type: record
+        fields:
+          - name: id
+            type: int
 
-        - name: categoryId
-          type: int
+          - name: categoryId
+            type: int
 
-        - name: attribute
-          existIf: $params.attributes != null
-          type: label.Attribute
-          attributes: $params.attributes
+          - name: attribute
+            existIf: $params.attributes != null
+            type: label.Attribute
+            attributes: $params.attributes

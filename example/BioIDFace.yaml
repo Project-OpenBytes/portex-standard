@@ -1,8 +1,7 @@
 ---
 version: v1.0.0
-type: table
-index: filename
-columns:
+type: record
+fields:
   - name: filename
     type: string
 

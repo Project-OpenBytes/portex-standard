@@ -11,13 +11,15 @@ params:
     default: null
 
 declaration:
-  type: table
-  columns:
-    - name: text
-      type: string
+  type: array
+  items:
+    type: record
+    fields:
+      - name: text
+        type: string
 
-    - name: begin
-      type: float
+      - name: begin
+        type: float
 
-    - name: end
-      type: float
+      - name: end
+        type: float

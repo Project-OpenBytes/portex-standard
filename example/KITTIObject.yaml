@@ -1,7 +1,7 @@
 ---
 version: v1.0.0
-type: table
-columns:
+type: record
+fields:
   - name: camera_2
     type: sensor.Camera
     fields:
