@@ -1,2 +1,2 @@
 # standard
-Graviti Open Dataset Standard Format
+OpenBytes Open Dataset Standard Format
