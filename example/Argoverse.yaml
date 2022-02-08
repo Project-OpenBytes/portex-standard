@@ -1,0 +1,95 @@
+---
+version: v1.0.0
+type: record
+fields:
+  - name: lidar
+    type: sensor.Lidar
+    fields:
+      - name: filename
+        type: string
+
+      - name: point_cloud
+        type: file.PointCloud
+        isContinous: true
+
+      - name: timestamp
+        type: int
+
+      - name: box3ds
+        type: array
+        items:
+          type: label.Box3D
+          categories:
+            - VEHICLE
+            - PEDESTRIAN
+            - ON_ROAD_OBSTACLE
+            - LARGE_VEHICLE
+            - BICYCLE
+            - BICYCLIST
+            - BUS
+            - OTHER_MOVER
+            - TRAILER
+            - MOTORCYCLIST
+            - MOPED
+            - MOTORCYCLE
+            - STROLLER
+            - EMERGENCY_VEHICLE
+            - ANIMAL
+
+      - name: extrinsic
+        type: calibration.Extrinsic
+
+  - name: ring_front_center
+    type: sensor.Camera
+    fields: &cameraFields
+      - name: filename
+        type: string
+
+      - name: image
+        type: file.Image
+        isContinous: true
+
+      - name: timestamp
+        type: int
+
+      - name: extrinsic
+        type: calibration.Extrinsic
+
+      - name: intrinsic
+        type: calibration.Intrinsic
+
+  - name: ring_front_left
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: ring_front_right
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: ring_rear_left
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: ring_rear_right
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: ring_side_left
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: ring_side_right
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: ring_side_right
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: stereo_front_left
+    type: sensor.Camera
+    fields: *cameraFields
+
+  - name: stereo_front_right
+    type: sensor.Camera
+    fields: *cameraFields
