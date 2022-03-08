@@ -19,7 +19,7 @@ declaration:
         type: string
 
       - name: begin
-        type: float
+        type: float32
 
       - name: end
-        type: float
+        type: float32

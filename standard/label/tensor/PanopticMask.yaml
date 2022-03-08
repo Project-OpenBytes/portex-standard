@@ -35,10 +35,10 @@ declaration:
         type: record
         fields:
           - name: id
-            type: int
+            type: int32
 
           - name: categoryId
-            type: int
+            type: int32
 
           - name: attribute
             existIf: $params.attributes != null

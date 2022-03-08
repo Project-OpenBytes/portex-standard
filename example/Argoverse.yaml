@@ -13,7 +13,7 @@ fields:
         isContinous: true
 
       - name: timestamp
-        type: int
+        type: int32
 
       - name: box3ds
         type: array
@@ -50,7 +50,7 @@ fields:
         isContinous: true
 
       - name: timestamp
-        type: int
+        type: int32
 
       - name: extrinsic
         type: calibration.Extrinsic

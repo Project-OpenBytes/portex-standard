@@ -19,7 +19,7 @@ declaration:
     - name: code
       type: array
       items:
-        type: int
+        type: int32
         minimum: 0
 
     - name: category

@@ -33,7 +33,7 @@ declaration:
         type: record
         fields:
           - name: id
-            type: int
+            type: int32
 
           - name: attribute
             type: label.Attribute

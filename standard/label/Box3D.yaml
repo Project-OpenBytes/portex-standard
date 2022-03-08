@@ -3,8 +3,8 @@ type: template
 params:
   dtype:
     required: false
-    default: float
-    options: [float, double]
+    default: float32
+    options: [float32, float64]
 
   categories:
     required: false

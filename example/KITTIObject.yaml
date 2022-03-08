@@ -34,7 +34,7 @@ fields:
               - 3 # unknown
 
           - name: alpha
-            type: float
+            type: float32
             minimum: -3.1416
             maximun: 3.1416
 

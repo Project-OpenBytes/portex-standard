@@ -13,7 +13,7 @@ fields:
         isContinous: true
 
       - name: timestamp
-        type: int
+        type: int32
 
       - name: box2ds
         type: array
