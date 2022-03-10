@@ -38,7 +38,7 @@ declaration:
   fields:
     - name: vertices
       type: array
-      length: number
+      length: $params.number
       items:
         type: geometry.Keypoint2D
         dtype: $params.dtype
@@ -46,7 +46,7 @@ declaration:
 
     - name: category
       existIf: $params.categories != null
-      type: geometry.Category
+      type: label.Category
       categories: $params.categories
       categoryDelimiter: $params.categoryDelimiter
 
