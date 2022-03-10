@@ -1,15 +1,15 @@
 ---
 type: template
 params:
-  categoryDelimiter:
-    required: false
-    default: null
-
   stuffIds:
     required: true
 
   thingIds:
     required: true
+
+  categoryDelimiter:
+    required: false
+    default: null
 
   attributes:
     required: false

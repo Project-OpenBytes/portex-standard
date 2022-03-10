@@ -7,12 +7,12 @@ params:
   dtype:
     required: true
 
+  categoryIds:
+    required: true
+
   categoryDelimiter:
     required: false
     default: null
-
-  categoryIds:
-    required: true
 
   attributes:
     required: false

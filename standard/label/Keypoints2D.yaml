@@ -1,12 +1,12 @@
 ---
 type: template
 params:
+  number:
+    required: true
+
   dtype:
     required: false
     default: int32
-
-  number:
-    required: true
 
   names:
     required: false

@@ -1,12 +1,12 @@
 ---
 type: template
 params:
+  categoryIds:
+    required: true
+
   categoryDelimiter:
     required: false
     default: null
-
-  categoryIds:
-    required: true
 
   attributes:
     required: false

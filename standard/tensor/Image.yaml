@@ -1,6 +1,12 @@
 ---
 type: template
 params:
+  shape:
+    required: true
+
+  dtype:
+    required: true
+
   isContinous:
     required: false
     default: false
@@ -10,12 +16,6 @@ params:
     required: false
     default: "RAW"
     options: ["RAW", "UNDISTORTED", "RECTIFIED"]
-
-  shape:
-    required: true
-
-  dtype:
-    required: true
 
 declaration:
   type: tensor

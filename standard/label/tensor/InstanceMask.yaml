@@ -7,21 +7,21 @@ params:
   dtype:
     required: true
 
-  isTracking:
-    required: false
-    default: false
-    options: [true, false]
+  categoryIds:
+    required: true
 
   categoryDelimiter:
     required: false
     default: null
 
-  categoryIds:
-    required: true
-
   attributes:
     required: false
     default: null
+
+  isTracking:
+    required: false
+    default: false
+    options: [true, false]
 
 declaration:
   type: record
