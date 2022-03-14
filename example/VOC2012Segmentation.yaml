@@ -1,5 +1,11 @@
 ---
-version: v1.0.0
+imports:
+  - repo: https://github.com/Project-OpenBytes/standard@v1.0.0
+    types:
+      - name: file.Image
+      - name: label.file.InstanceMask
+      - name: label.file.SemanticMask
+
 type: record
 fields:
   - name: filename

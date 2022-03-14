@@ -1,5 +1,15 @@
 ---
-version: v1.0.0
+imports:
+  - repo: https://github.com/Project-OpenBytes/standard@v1.0.0
+    types:
+      - name: calibration.Extrinsic
+      - name: calibration.Intrinsic
+      - name: file.Image
+      - name: file.PointCloud
+      - name: label.Box3D
+      - name: sensor.Camera
+      - name: sensor.Lidar
+
 type: record
 fields:
   - name: lidar

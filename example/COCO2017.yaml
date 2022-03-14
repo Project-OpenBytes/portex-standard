@@ -1,5 +1,15 @@
 ---
-version: v1.0.0
+imports:
+  - repo: https://github.com/Project-OpenBytes/standard@v1.0.0
+    types:
+      - name: file.Image
+      - name: label.Box2D
+      - name: label.Category
+      - name: label.Keypoints2D
+      - name: label.MultiPolygon
+      - name: label.RLE
+      - name: label.tensor.PanopticMask
+
 type: record
 fields:
   - name: filename

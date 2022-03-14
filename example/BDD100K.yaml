@@ -1,5 +1,13 @@
 ---
-version: v1.0.0
+imports:
+  - repo: https://github.com/Project-OpenBytes/standard@v1.0.0
+    types:
+      - name: file.Image
+      - name: label.Attribute
+      - name: label.Box2D
+      - name: label.Polygon
+      - name: label.Polyline2D
+
 type: record
 fields:
   - name: filename

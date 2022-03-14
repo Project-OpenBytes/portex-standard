@@ -1,5 +1,10 @@
 ---
-version: v1.0.0
+imports:
+  - repo: https://github.com/Project-OpenBytes/standard@v1.0.0
+    types:
+      - name: label.Category
+      - name: tensor.Image
+
 type: record
 fields:
   - name: image
