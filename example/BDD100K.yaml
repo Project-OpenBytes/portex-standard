@@ -77,11 +77,11 @@ fields:
 
         - name: trafficLightColor
           type: enum
+          nullable: true
           values:
             - red
             - green
             - yellow
-            - null
 
   - name: polygons
     type: array
