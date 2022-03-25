@@ -1,6 +1,6 @@
 ---
 imports:
-  - repo: https://github.com/Project-OpenBytes/standard@v1.0.0
+  - repo: https://github.com/Project-OpenBytes/standard@main
     types:
       - name: file.Image
       - name: label.Keypoints2D
