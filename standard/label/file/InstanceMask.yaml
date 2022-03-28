@@ -21,7 +21,7 @@ declaration:
   type: record
   fields:
     - name: mask
-      type: bytes
+      type: binary
 
     - name: info
       existIf: $params.attributes != null

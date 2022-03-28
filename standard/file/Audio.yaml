@@ -1,4 +1,4 @@
 ---
 type: template
 declaration:
-  type: bytes
+  type: binary

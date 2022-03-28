@@ -19,7 +19,7 @@ declaration:
   type: record
   fields:
     - name: mask
-      type: bytes
+      type: binary
 
     - name: info
       type: array

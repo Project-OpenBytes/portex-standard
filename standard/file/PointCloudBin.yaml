@@ -11,4 +11,4 @@ params:
     default: [X, Y, Z, Intensity]
 
 declaration:
-  type: bytes
+  type: binary

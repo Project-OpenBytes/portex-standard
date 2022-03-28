@@ -7,4 +7,4 @@ params:
     options: [true, false]
 
 declaration:
-  type: bytes
+  type: binary
