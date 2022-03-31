@@ -7,7 +7,7 @@ params:
   thingIds:
     required: true
 
-  categoryDelimiter:
+  category_delimiter:
     required: false
     default: null
 

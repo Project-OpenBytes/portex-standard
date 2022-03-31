@@ -17,7 +17,7 @@ fields:
 
   - name: category
     type: label.Category
-    categoryDelimiter: .
+    category_delimiter: .
     categories:
       - Cat.Abyssinian
       - Cat.Bengal
@@ -62,7 +62,7 @@ fields:
 
   - name: semantic_mask
     type: label.file.SemanticMask
-    categoryIds:
+    category_ids:
       1: foreground
       2: background
       3: contour

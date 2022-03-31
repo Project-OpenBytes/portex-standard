@@ -22,7 +22,7 @@ fields:
 
       - name: point_cloud
         type: file.PointCloudBin
-        isContinous: true
+        is_continous: true
         fields: [X, Y, Z, Intensity, Ring]
 
       - name: timestamp
@@ -32,7 +32,7 @@ fields:
         type: array
         items:
           type: label.Box3D
-          categoryDelimiter: .
+          category_delimiter: .
           categories:
             - animal                               # All animals, e.g. cats, rats, dogs, deer, birds.
             - human.pedestrian.adult               # Adult subcategory.
@@ -92,7 +92,7 @@ fields:
 
       - name: image
         type: file.Image
-        isContinous: true
+        is_continous: true
 
       - name: timestamp
         type: int32
@@ -131,7 +131,7 @@ fields:
 
       - name: point_cloud
         type: file.PointCloud
-        isContinous: true
+        is_continous: true
 
       - name: timestamp
         type: int32

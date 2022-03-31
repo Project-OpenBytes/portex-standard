@@ -5,7 +5,7 @@ params:
     required: false
     default: null
 
-  categoryDelimiter:
+  category_delimiter:
     required: false
     default: null
 
@@ -26,7 +26,7 @@ declaration:
       exist_if: $params.categories != null
       type: label.Category
       categories: $params.categories
-      categoryDelimiter: $params.categoryDelimiter
+      category_delimiter: $params.category_delimiter
 
     - name: attribute
       type: label.Attribute

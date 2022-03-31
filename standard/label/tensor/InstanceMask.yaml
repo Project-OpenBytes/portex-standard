@@ -7,10 +7,10 @@ params:
   dtype:
     required: true
 
-  categoryIds:
+  category_ids:
     required: true
 
-  categoryDelimiter:
+  category_delimiter:
     required: false
     default: null
 
@@ -18,7 +18,7 @@ params:
     required: false
     default: null
 
-  isTracking:
+  is_tracking:
     required: false
     default: false
     options: [true, false]

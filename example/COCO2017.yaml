@@ -22,7 +22,7 @@ fields:
     type: array
     items:
       type: label.Box2D
-      categoryDelimiter: .
+      category_delimiter: .
       categories: &categories
         - person.person
         - vehicle.bicycle
@@ -162,7 +162,7 @@ fields:
     type: array
     items:
       type: label.Keypoints2D
-      categoryDelimiter: .
+      category_delimiter: .
       categories:
         - person.persion
       number: 17
@@ -213,21 +213,21 @@ fields:
     type: array
     items:
       type: label.MultiPolygon
-      categoryDelimiter: .
+      category_delimiter: .
       categories: *categories
 
   - name: RLE
     type: array
     items:
       type: label.RLE
-      categoryDelimiter: .
+      category_delimiter: .
       categories: *categories
 
   - name: panoptic_mask
     type: label.tensor.PanopticMask
     dtype: uint8
     shape: [null, null]
-    categoryDelimiter: .
+    category_delimiter: .
     thingIds:
       0: background
       1: person.person

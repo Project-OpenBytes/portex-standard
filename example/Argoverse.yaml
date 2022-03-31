@@ -20,7 +20,7 @@ fields:
 
       - name: point_cloud
         type: file.PointCloud
-        isContinous: true
+        is_continous: true
 
       - name: timestamp
         type: int32
@@ -57,7 +57,7 @@ fields:
 
       - name: image
         type: file.Image
-        isContinous: true
+        is_continous: true
 
       - name: timestamp
         type: int32

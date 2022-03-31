@@ -19,7 +19,7 @@ fields:
 
       - name: image
         type: file.Image
-        isContinous: true
+        is_continous: true
 
       - name: timestamp
         type: int32
@@ -28,7 +28,7 @@ fields:
         type: array
         items:
           type: label.Box2D
-          categoryDelimiter: .
+          category_delimiter: .
           categories: &categories
             - animal                               # All animals, e.g. cats, rats, dogs, deer, birds.
             - human.pedestrian.adult               # Adult subcategory.
@@ -79,7 +79,7 @@ fields:
         type: array
         items:
           type: label.RLE
-          categoryDelimiter: .
+          category_delimiter: .
           categories: *categories
           attributes: *attributes
 

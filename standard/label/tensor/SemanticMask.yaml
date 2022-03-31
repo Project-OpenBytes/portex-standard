@@ -7,10 +7,10 @@ params:
   dtype:
     required: true
 
-  categoryIds:
+  category_ids:
     required: true
 
-  categoryDelimiter:
+  category_delimiter:
     required: false
     default: null
 

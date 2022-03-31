@@ -1,7 +1,7 @@
 ---
 type: template
 params:
-  isContinous:
+  is_continous:
     required: false
     default: false
     options: [true, false]
