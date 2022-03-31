@@ -20,7 +20,7 @@ declaration:
       type: $params.dtype
 
     - name: v
-      existIf: $params.visible != null
+      exist_if: $params.visible != null
       type: enum
       values:
         if: $params.visible == "BINARY"

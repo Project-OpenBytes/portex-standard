@@ -23,12 +23,12 @@ declaration:
         minimum: 0
 
     - name: category
-      existIf: $params.categories != null
+      exist_if: $params.categories != null
       type: label.Category
       categories: $params.categories
       categoryDelimiter: $params.categoryDelimiter
 
     - name: attribute
       type: label.Attribute
-      existIf: $params.attributes != null
+      exist_if: $params.attributes != null
       attributes: $params.attributes

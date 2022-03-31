@@ -12,6 +12,6 @@ declaration:
       type: string
 
     - name: attribute
-      existIf: $params.attributes != null
+      exist_if: $params.attributes != null
       type: label.Attribute
       attributes: $params.attributes

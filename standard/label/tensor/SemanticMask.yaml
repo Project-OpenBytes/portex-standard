@@ -27,7 +27,7 @@ declaration:
       dtype: $params.dtype
 
     - name: info
-      existIf: $params.attributes != null
+      exist_if: $params.attributes != null
       type: array
       items:
         type: record
