@@ -1,0 +1,10 @@
+---
+type: template
+declaration:
+  type: record
+  fields:
+    - name: url
+      type: string
+
+    - name: checksum
+      type: string
