@@ -4,7 +4,7 @@ params:
   shape:
     required: true
 
-  dtype:
+  pixels:
     required: true
 
   is_continous:
@@ -20,4 +20,4 @@ params:
 declaration:
   type: tensor
   shape: $params.shape
-  dtype: $params.dtype
+  items: $params.pixels

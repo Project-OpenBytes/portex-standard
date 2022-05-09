@@ -1,10 +1,10 @@
 ---
 type: template
 params:
-  dtype:
+  coords:
     required: false
-    default: float32
-    options: [float32, float64]
+    default:
+      type: float32
 
 declaration:
   type: record
@@ -12,9 +12,8 @@ declaration:
     - name: cameraMatrix
       type: tensor
       shape: [3, 3]
-      dtype: $params.dtype
+      items: $params.coords
 
     - name: distortionCoefficients
       type: array
-      items:
-        type: $params.dtype
+      items: $params.coords

@@ -4,7 +4,7 @@ params:
   shape:
     required: true
 
-  dtype:
+  pixels:
     required: true
 
   category_ids:
@@ -29,7 +29,7 @@ declaration:
     - name: mask
       type: tensor
       shape: $params.shape
-      dtype: $params.dtype
+      items: $params.pixels
 
     - name: info
       exist_if: $params.attributes != null

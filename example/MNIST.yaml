@@ -9,7 +9,8 @@ type: record
 fields:
   - name: image
     type: tensor.Image
-    dtype: uint8
+    pixels:
+      type: uint8
     shape: [28, 28]
 
   - name: category

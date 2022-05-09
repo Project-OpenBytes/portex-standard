@@ -225,7 +225,8 @@ fields:
 
   - name: panoptic_mask
     type: label.tensor.PanopticMask
-    dtype: uint8
+    pixels:
+      type: uint8
     shape: [null, null]
     category_delimiter: .
     thingIds:
