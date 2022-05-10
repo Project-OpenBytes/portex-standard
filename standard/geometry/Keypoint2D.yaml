@@ -3,7 +3,7 @@ type: template
 params:
   dtype:
     required: false
-    default: int32
+    default: float32
 
   visible:
     required: false
