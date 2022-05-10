@@ -1,15 +1,16 @@
 ---
 type: template
 params:
-  dtype:
+  coords:
     required: false
-    default: float32
+    default:
+      type: float32
 
 declaration:
   type: record
   fields:
     - name: x
-      type: $params.dtype
+      +: $params.coords
 
     - name: y
-      type: $params.dtype
+      +: $params.coords

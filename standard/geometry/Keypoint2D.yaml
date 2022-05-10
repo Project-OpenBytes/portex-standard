@@ -1,9 +1,10 @@
 ---
 type: template
 params:
-  dtype:
+  coords:
     required: false
-    default: float32
+    default:
+      type: float32
 
   visible:
     required: false
@@ -14,10 +15,10 @@ declaration:
   type: record
   fields:
     - name: x
-      type: $params.dtype
+      +: $params.coords
 
     - name: y
-      type: $params.dtype
+      +: $params.coords
 
     - name: v
       exist_if: $params.visible != null
