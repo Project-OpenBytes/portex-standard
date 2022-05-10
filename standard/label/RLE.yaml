@@ -14,20 +14,13 @@ params:
     default: null
 
 declaration:
-  type: record
-  fields:
+  type: label._Label
+  geometry:
     - name: code
       type: array
       items:
         type: int32
 
-    - name: category
-      exist_if: $params.categories != null
-      type: label.Category
-      categories: $params.categories
-      category_delimiter: $params.category_delimiter
-
-    - name: attribute
-      type: label.Attribute
-      exist_if: $params.attributes != null
-      attributes: $params.attributes
+  categories: $params.categories
+  category_delimiter: $params.category_delimiter
+  attributes: $params.attributes

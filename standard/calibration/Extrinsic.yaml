@@ -1,18 +1,18 @@
 ---
 type: template
 params:
-  dtype:
+  coords:
     required: false
-    default: float32
-    options: [float32, float64]
+    default:
+      type: float32
 
 declaration:
   type: record
   fields:
     - name: translation
       type: geometry.Vector3D
-      dtype: $params.dtype
+      coords: $params.coords
 
     - name: rotation
       type: geometry.Quaternion
-      dtype: $params.dtype
+      coords: $params.coords

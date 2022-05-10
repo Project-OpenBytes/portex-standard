@@ -4,9 +4,10 @@ params:
   number:
     required: true
 
-  dtype:
+  coords:
     required: false
-    default: float32
+    default:
+      type: float32
 
   names:
     required: false
@@ -34,23 +35,16 @@ params:
     default: null
 
 declaration:
-  type: record
-  fields:
+  type: label._Label
+  geometry:
     - name: vertices
       type: array
       length: $params.number
       items:
         type: geometry.Keypoint2D
-        dtype: $params.dtype
+        coords: $params.coords
         visible: $params.visible
 
-    - name: category
-      exist_if: $params.categories != null
-      type: label.Category
-      categories: $params.categories
-      category_delimiter: $params.category_delimiter
-
-    - name: attribute
-      exist_if: $params.attributes != null
-      type: label.Attribute
-      attributes: $params.attributes
+  categories: $params.categories
+  category_delimiter: $params.category_delimiter
+  attributes: $params.attributes

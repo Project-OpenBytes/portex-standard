@@ -1,12 +1,13 @@
 ---
 type: template
 params:
-  dtype:
+  coords:
     required: false
-    default: float32
+    default:
+      type: float32
 
 declaration:
   type: array
   items:
     type: geometry.Vector2D
-    dtype: $params.dtype
+    coords: $params.coords

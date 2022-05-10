@@ -1,9 +1,10 @@
 ---
 type: template
 params:
-  dtype:
+  coords:
     required: false
-    default: float32
+    default:
+      type: float32
 
   categories:
     required: false
@@ -18,19 +19,12 @@ params:
     default: null
 
 declaration:
-  type: record
-  fields:
+  type: label._Label
+  geometry:
     - name: vertices
       type: geometry.PointList2D
-      dtype: $params.dtype
+      coords: $params.coords
 
-    - name: category
-      exist_if: $params.categories != null
-      type: label.Category
-      categories: $params.categories
-      category_delimiter: $params.category_delimiter
-
-    - name: attribute
-      exist_if: $params.attributes != null
-      type: label.Attribute
-      attributes: $params.attributes
+  categories: $params.categories
+  category_delimiter: $params.category_delimiter
+  attributes: $params.attributes
