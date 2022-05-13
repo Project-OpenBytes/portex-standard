@@ -20,7 +20,6 @@ declaration:
       type: array
       items:
         type: int32
-        minimum: 0
 
     - name: category
       exist_if: $params.categories != null

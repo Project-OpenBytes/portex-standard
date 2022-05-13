@@ -46,8 +46,6 @@ fields:
 
           - name: alpha
             type: float32
-            minimum: -3.1416
-            maximun: 3.1416
 
       - name: extrinsic
         type: calibration.Extrinsic
