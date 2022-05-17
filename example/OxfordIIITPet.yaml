@@ -61,6 +61,8 @@ fields:
 
   - name: box2d
     type: label.Box2D
+    coords:
+      type: int32
 
   - name: semantic_mask
     type: label.file.SemanticMask

@@ -19,6 +19,9 @@ fields:
     type: array
     items:
       type: label.Box2D
+      coords:
+        type: int32
+
       categories:
         - aeroplane
         - bicycle
