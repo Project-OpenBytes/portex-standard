@@ -4,8 +4,9 @@ imports:
     types:
       - name: calibration.Extrinsic
       - name: calibration.Intrinsic
-      - name: file.Image
-      - name: file.PointCloud
+      # - name: file.Image
+      # - name: file.PointCloud
+      - name: file.RemoteFile
       - name: label.Box3D
       - name: sensor.Camera
       - name: sensor.Lidar
@@ -19,8 +20,9 @@ fields:
         type: string
 
       - name: point_cloud
-        type: file.PointCloud
-        is_continous: true
+        type: file.RemoteFile
+        # type: file.PointCloud
+        # is_continous: true
 
       - name: timestamp
         type: int32
@@ -56,8 +58,9 @@ fields:
         type: string
 
       - name: image
-        type: file.Image
-        is_continous: true
+        type: file.RemoteFile
+        # type: file.Image
+        # is_continous: true
 
       - name: timestamp
         type: int32
