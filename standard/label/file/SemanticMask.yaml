@@ -16,7 +16,7 @@ declaration:
       type: binary
 
     - name: info
-      exist_if: $attributes != null
+      exist_if: $attributes
       type: array
       items:
         type: record

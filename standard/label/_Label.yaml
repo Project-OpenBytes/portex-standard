@@ -18,12 +18,12 @@ declaration:
     - +$geometry
 
     - name: category
-      exist_if: $categories != null
+      exist_if: $categories
       type: label.Category
       categories: $categories
       category_delimiter: $category_delimiter
 
     - name: attribute
-      exist_if: $attributes != null
+      exist_if: $attributes
       type: label.Attribute
       attributes: $attributes

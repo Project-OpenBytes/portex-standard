@@ -11,6 +11,6 @@ declaration:
       type: string
 
     - name: attribute
-      exist_if: $attributes != null
+      exist_if: $attributes
       type: label.Attribute
       attributes: $attributes
