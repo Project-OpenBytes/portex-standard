@@ -1,8 +1,7 @@
 ---
 type: template
-params:
-  coords:
-    required: false
+parameters:
+  - name: coords
     default:
       type: float32
 
@@ -10,4 +9,4 @@ declaration:
   type: array
   items:
     type: geometry.Vector2D
-    coords: $params.coords
+    coords: $coords

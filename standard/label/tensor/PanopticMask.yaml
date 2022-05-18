@@ -1,24 +1,18 @@
 ---
 type: template
-params:
-  shape:
-    required: true
+parameters:
+  - name: shape
 
-  pixels:
-    required: true
+  - name: pixels
 
-  stuffIds:
-    required: true
+  - name: stuffIds
 
-  thingIds:
-    required: true
+  - name: thingIds
 
-  category_delimiter:
-    required: false
+  - name: category_delimiter
     default: null
 
-  attributes:
-    required: false
+  - name: attributes
     default: null
 
 declaration:
@@ -26,8 +20,8 @@ declaration:
   fields:
     - name: mask
       type: tensor
-      shape: $params.shape
-      items: $params.pixels
+      shape: $shape
+      items: $pixels
 
     - name: info
       type: array
@@ -41,6 +35,6 @@ declaration:
             type: int32
 
           - name: attribute
-            exist_if: $params.attributes != null
+            exist_if: $attributes != null
             type: label.Attribute
-            attributes: $params.attributes
+            attributes: $attributes

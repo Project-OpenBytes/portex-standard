@@ -1,16 +1,13 @@
 ---
 type: template
-params:
-  categories:
-    required: false
+parameters:
+  - name: categories
     default: null
 
-  category_delimiter:
-    required: false
+  - name: category_delimiter
     default: null
 
-  attributes:
-    required: false
+  - name: attributes
     default: null
 
 declaration:
@@ -21,6 +18,6 @@ declaration:
       items:
         type: int32
 
-  categories: $params.categories
-  category_delimiter: $params.category_delimiter
-  attributes: $params.attributes
+  categories: $categories
+  category_delimiter: $category_delimiter
+  attributes: $attributes

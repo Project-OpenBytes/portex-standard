@@ -1,38 +1,34 @@
 ---
 type: template
-params:
-  coords:
-    required: false
+parameters:
+  - name: coords
     default:
       type: float32
 
-  categories:
-    required: false
+  - name: categories
     default: null
 
-  category_delimiter:
-    required: false
+  - name: category_delimiter
     default: null
 
-  attributes:
-    required: false
+  - name: attributes
     default: null
 
 declaration:
   type: label._Label
   geometry:
     - name: xmin
-      +: $params.coords
+      +: $coords
 
     - name: ymin
-      +: $params.coords
+      +: $coords
 
     - name: xmax
-      +: $params.coords
+      +: $coords
 
     - name: ymax
-      +: $params.coords
+      +: $coords
 
-  categories: $params.categories
-  category_delimiter: $params.category_delimiter
-  attributes: $params.attributes
+  categories: $categories
+  category_delimiter: $category_delimiter
+  attributes: $attributes

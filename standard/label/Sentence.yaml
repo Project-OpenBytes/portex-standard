@@ -1,13 +1,11 @@
 ---
 type: template
-params:
-  is_sample:
-    required: false
+parameters:
+  - name: is_sample
     default: false
     options: [true, false]
 
-  sample_rate:
-    required: false
+  - name: sample_rate
     default: null
 
 declaration:

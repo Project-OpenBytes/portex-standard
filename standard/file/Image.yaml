@@ -1,13 +1,11 @@
 ---
 type: template
-params:
-  is_continous:
-    required: false
+parameters:
+  - name: is_continous
     default: false
     options: [true, false]
 
-  distort_status:
-    required: false
+  - name: distort_status
     default: "RAW"
     options: ["RAW", "UNDISTORTED", "RECTIFIED"]
 

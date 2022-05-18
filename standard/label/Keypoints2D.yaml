@@ -1,37 +1,29 @@
 ---
 type: template
-params:
-  number:
-    required: true
+parameters:
+  - name: number
 
-  coords:
-    required: false
+  - name: coords
     default:
       type: float32
 
-  names:
-    required: false
+  - name: names
     default: null
 
-  skeleton:
-    required: false
+  - name: skeleton
     default: null
 
-  visible:
-    required: false
+  - name: visible
     default: null
     options: [null, "BINARY", "TERNARY"]
 
-  categories:
-    required: false
+  - name: categories
     default: null
 
-  category_delimiter:
-    required: false
+  - name: category_delimiter
     default: null
 
-  attributes:
-    required: false
+  - name: attributes
     default: null
 
 declaration:
@@ -39,12 +31,12 @@ declaration:
   geometry:
     - name: vertices
       type: array
-      length: $params.number
+      length: $number
       items:
         type: geometry.Keypoint2D
-        coords: $params.coords
-        visible: $params.visible
+        coords: $coords
+        visible: $visible
 
-  categories: $params.categories
-  category_delimiter: $params.category_delimiter
-  attributes: $params.attributes
+  categories: $categories
+  category_delimiter: $category_delimiter
+  attributes: $attributes

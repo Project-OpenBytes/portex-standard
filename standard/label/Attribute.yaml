@@ -1,9 +1,8 @@
 ---
 type: template
-params:
-  attributes:
-    required: true
+parameters:
+  - name: attributes
 
 declaration:
   type: record
-  fields: $params.attributes
+  fields: $attributes
