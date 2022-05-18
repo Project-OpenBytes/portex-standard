@@ -1,25 +1,19 @@
 ---
 type: template
-params:
-  shape:
-    required: true
+parameters:
+  - name: shape
 
-  pixels:
-    required: true
+  - name: pixels
 
-  category_ids:
-    required: true
+  - name: category_ids
 
-  category_delimiter:
-    required: false
+  - name: category_delimiter
     default: null
 
-  attributes:
-    required: false
+  - name: attributes
     default: null
 
-  is_tracking:
-    required: false
+  - name: is_tracking
     default: false
     options: [true, false]
 
@@ -28,11 +22,11 @@ declaration:
   fields:
     - name: mask
       type: tensor
-      shape: $params.shape
-      items: $params.pixels
+      shape: $shape
+      items: $pixels
 
     - name: info
-      exist_if: $params.attributes != null
+      exist_if: $attributes != null
       type: array
       items:
         type: record
@@ -42,4 +36,4 @@ declaration:
 
           - name: attribute
             type: label.Attribute
-            attributes: $params.attributes
+            attributes: $attributes

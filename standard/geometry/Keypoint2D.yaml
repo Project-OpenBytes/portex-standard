@@ -1,13 +1,11 @@
 ---
 type: template
-params:
-  coords:
-    required: false
+parameters:
+  - name: coords
     default:
       type: float32
 
-  visible:
-    required: false
+  - name: visible
     default: null
     options: ["BINARY", "TERNARY", null]
 
@@ -15,15 +13,15 @@ declaration:
   type: record
   fields:
     - name: x
-      +: $params.coords
+      +: $coords
 
     - name: y
-      +: $params.coords
+      +: $coords
 
     - name: v
-      exist_if: $params.visible != null
+      exist_if: $visible != null
       type: enum
       values:
-        if: $params.visible == "BINARY"
+        if: $visible == "BINARY"
         then: [0, 1]
         else: [0, 1, 2]

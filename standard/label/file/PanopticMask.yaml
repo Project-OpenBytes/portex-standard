@@ -1,18 +1,14 @@
 ---
 type: template
-params:
-  stuffIds:
-    required: true
+parameters:
+  - name: stuffIds
 
-  thingIds:
-    required: true
+  - name: thingIds
 
-  category_delimiter:
-    required: false
+  - name: category_delimiter
     default: null
 
-  attributes:
-    required: false
+  - name: attributes
     default: null
 
 declaration:
@@ -33,6 +29,6 @@ declaration:
             type: int32
 
           - name: attribute
-            exist_if: $params.attributes != null
+            exist_if: $attributes != null
             type: label.Attribute
-            attributes: $params.attributes
+            attributes: $attributes

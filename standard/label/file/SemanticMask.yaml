@@ -1,15 +1,12 @@
 ---
 type: template
-params:
-  category_ids:
-    required: true
+parameters:
+  - name: category_ids
 
-  category_delimiter:
-    required: false
+  - name: category_delimiter
     default: null
 
-  attributes:
-    required: false
+  - name: attributes
     default: null
 
 declaration:
@@ -19,7 +16,7 @@ declaration:
       type: binary
 
     - name: info
-      exist_if: $params.attributes != null
+      exist_if: $attributes != null
       type: array
       items:
         type: record
@@ -29,4 +26,4 @@ declaration:
 
           - name: attribute
             type: label.Attribute
-            attributes: $params.attributes
+            attributes: $attributes

@@ -1,8 +1,7 @@
 ---
 type: template
-params:
-  coords:
-    required: false
+parameters:
+  - name: coords
     default:
       type: float32
 
@@ -11,8 +10,8 @@ declaration:
   fields:
     - name: translation
       type: geometry.Vector3D
-      coords: $params.coords
+      coords: $coords
 
     - name: rotation
       type: geometry.Quaternion
-      coords: $params.coords
+      coords: $coords

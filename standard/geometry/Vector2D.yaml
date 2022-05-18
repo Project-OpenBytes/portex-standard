@@ -1,8 +1,7 @@
 ---
 type: template
-params:
-  coords:
-    required: false
+parameters:
+  - name: coords
     default:
       type: float32
 
@@ -10,7 +9,7 @@ declaration:
   type: record
   fields:
     - name: x
-      +: $params.coords
+      +: $coords
 
     - name: y
-      +: $params.coords
+      +: $coords

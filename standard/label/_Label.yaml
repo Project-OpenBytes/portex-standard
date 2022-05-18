@@ -1,33 +1,29 @@
 ---
 type: template
-params:
-  geometry:
-    required: true
+parameters:
+  - name: geometry
 
-  categories:
-    required: false
+  - name: categories
     default: null
 
-  category_delimiter:
-    required: false
+  - name: category_delimiter
     default: null
 
-  attributes:
-    required: false
+  - name: attributes
     default: null
 
 declaration:
   type: record
   fields:
-    - +$params.geometry
+    - +$geometry
 
     - name: category
-      exist_if: $params.categories != null
+      exist_if: $categories != null
       type: label.Category
-      categories: $params.categories
-      category_delimiter: $params.category_delimiter
+      categories: $categories
+      category_delimiter: $category_delimiter
 
     - name: attribute
-      exist_if: $params.attributes != null
+      exist_if: $attributes != null
       type: label.Attribute
-      attributes: $params.attributes
+      attributes: $attributes

@@ -1,8 +1,7 @@
 ---
 type: template
-params:
-  is_continous:
-    required: false
+parameters:
+  - name: is_continous
     default: false
     options: [true, false]
 

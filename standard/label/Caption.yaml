@@ -1,8 +1,7 @@
 ---
 type: template
-params:
-  attributes:
-    required: false
+parameters:
+  - name: attributes
     default: null
 
 declaration:
@@ -12,6 +11,6 @@ declaration:
       type: string
 
     - name: attribute
-      exist_if: $params.attributes != null
+      exist_if: $attributes != null
       type: label.Attribute
-      attributes: $params.attributes
+      attributes: $attributes

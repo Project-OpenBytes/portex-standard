@@ -1,23 +1,19 @@
 ---
 type: template
-params:
-  shape:
-    required: true
+parameters:
+  - name: shape
 
-  pixels:
-    required: true
+  - name: pixels
 
-  is_continous:
-    required: false
+  - name: is_continous
     default: false
     options: [true, false]
 
-  distort_status:
-    required: false
+  - name: distort_status
     default: "RAW"
     options: ["RAW", "UNDISTORTED", "RECTIFIED"]
 
 declaration:
   type: tensor
-  shape: $params.shape
-  items: $params.pixels
+  shape: $shape
+  items: $pixels

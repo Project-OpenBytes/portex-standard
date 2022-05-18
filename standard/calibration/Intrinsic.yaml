@@ -1,8 +1,7 @@
 ---
 type: template
-params:
-  coords:
-    required: false
+parameters:
+  - name: coords
     default:
       type: float32
 
@@ -12,8 +11,8 @@ declaration:
     - name: cameraMatrix
       type: tensor
       shape: [3, 3]
-      items: $params.coords
+      items: $coords
 
     - name: distortionCoefficients
       type: array
-      items: $params.coords
+      items: $coords
