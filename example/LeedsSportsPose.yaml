@@ -18,7 +18,9 @@ fields:
   - name: keypoints2d
     type: label.Keypoints2D
     number: 14
-    visible: BINARY
+    visible:
+      type: enum
+      values: [0, 1]
     names:
       - Right ankle
       - Right knee

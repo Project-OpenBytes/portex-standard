@@ -7,7 +7,6 @@ parameters:
 
   - name: visible
     default: null
-    options: ["BINARY", "TERNARY", null]
 
 declaration:
   type: record
@@ -20,8 +19,4 @@ declaration:
 
     - name: v
       exist_if: $visible
-      type: enum
-      values:
-        if: $visible == "BINARY"
-        then: [0, 1]
-        else: [0, 1, 2]
+      +: $visible

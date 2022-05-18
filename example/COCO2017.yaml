@@ -168,7 +168,9 @@ fields:
       categories:
         - person.persion
       number: 17
-      visible: TERNARY
+      visible:
+        type: enum
+        values: [0, 1, 2]
       names:
         - nose
         - left_eye
