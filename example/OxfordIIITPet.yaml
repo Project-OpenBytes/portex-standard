@@ -6,7 +6,8 @@ imports:
       - name: file.RemoteFile
       - name: label.Box2D
       - name: label.Category
-      - name: label.file.SemanticMask
+      - name: label.file.RemoteSemanticMask
+      # - name: label.file.SemanticMask
 
 type: record
 fields:
@@ -65,7 +66,8 @@ fields:
       type: int32
 
   - name: semantic_mask
-    type: label.file.SemanticMask
+    type: label.file.RemoteSemanticMask
+    # type: label.file.SemanticMask
     category_ids:
       1: foreground
       2: background

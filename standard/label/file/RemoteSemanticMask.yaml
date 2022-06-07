@@ -1,0 +1,10 @@
+---
+type: template
+parameters:
+  - name: category_ids
+
+  - name: category_delimiter
+    default: null
+
+declaration:
+  type: file.RemoteFile
