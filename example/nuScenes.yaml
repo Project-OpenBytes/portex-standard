@@ -1,6 +1,6 @@
 ---
 imports:
-  - repo: https://github.com/Project-OpenBytes/standard@main
+  - repo: https://github.com/Project-OpenBytes/portex-standard@main
     types:
       - name: calibration.Extrinsic
       - name: calibration.Intrinsic
