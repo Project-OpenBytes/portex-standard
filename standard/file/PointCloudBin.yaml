@@ -9,4 +9,4 @@ parameters:
     default: [X, Y, Z, Intensity]
 
 declaration:
-  type: binary
+  type: file.File

@@ -6,4 +6,4 @@ parameters:
     options: [true, false]
 
 declaration:
-  type: binary
+  type: file.File

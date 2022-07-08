@@ -10,4 +10,10 @@ parameters:
     options: ["RAW", "UNDISTORTED", "RECTIFIED"]
 
 declaration:
-  type: binary
+  type: file.File
+  extras:
+    - name: height
+      type: int32
+
+    - name: width
+      type: int32
