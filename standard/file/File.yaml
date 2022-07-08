@@ -1,0 +1,19 @@
+---
+type: template
+parameters:
+  - name: extras
+    default: null
+
+declaration:
+  type: record
+  fields:
+    - name: key
+      type: string
+
+    - name: extension
+      type: string
+
+    - name: size
+      type: int64
+
+    - +$extras
