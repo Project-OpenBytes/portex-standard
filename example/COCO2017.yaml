@@ -9,7 +9,7 @@ imports:
       - name: label.Keypoints2D
       - name: label.MultiPolygon
       - name: label.RLE
-      - name: label.tensor.PanopticMask
+      - name: label.file.PanopticMask
 
 type: record
 fields:
@@ -228,7 +228,7 @@ fields:
       categories: *categories
 
   - name: panoptic_mask
-    type: label.tensor.PanopticMask
+    type: label.file.PanopticMask
     pixels:
       type: uint8
     shape: [null, null]

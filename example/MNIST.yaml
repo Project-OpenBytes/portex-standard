@@ -3,15 +3,12 @@ imports:
   - repo: https://github.com/Project-OpenBytes/portex-standard@main
     types:
       - name: label.Category
-      - name: tensor.Image
+      - name: file.Image
 
 type: record
 fields:
   - name: image
-    type: tensor.Image
-    pixels:
-      type: uint8
-    shape: [28, 28]
+    type: file.Image
 
   - name: category
     type: label.Category
