@@ -9,9 +9,12 @@ declaration:
   type: record
   fields:
     - name: cameraMatrix
-      type: tensor
-      shape: [3, 3]
-      items: $coords
+      type: array
+      length: 3
+      items:
+        type: array
+        length: 3
+        items: $coords
 
     - name: distortionCoefficients
       type: array
