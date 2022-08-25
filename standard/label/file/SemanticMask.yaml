@@ -13,7 +13,7 @@ declaration:
   type: record
   fields:
     - name: mask
-      type: binary
+      type: file.Image
 
     - name: info
       exist_if: $attributes
