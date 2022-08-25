@@ -8,7 +8,7 @@ parameters:
 declaration:
   type: record
   fields:
-    - name: cameraMatrix
+    - name: camera_matrix
       type: array
       length: 3
       items:
@@ -16,6 +16,6 @@ declaration:
         length: 3
         items: $coords
 
-    - name: distortionCoefficients
+    - name: distortion_coefficients
       type: array
       items: $coords
