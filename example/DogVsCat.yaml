@@ -2,8 +2,7 @@
 imports:
   - repo: https://github.com/Project-OpenBytes/portex-standard@main
     types:
-      # - name: file.Image
-      - name: file.RemoteFile
+      - name: file.Image
       - name: label.Category
 
 type: record
@@ -12,8 +11,7 @@ fields:
     type: string
 
   - name: image
-    type: file.RemoteFile
-    # type: file.Image
+    type: file.Image
 
   - name: category
     type: label.Category

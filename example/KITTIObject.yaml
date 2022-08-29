@@ -4,9 +4,8 @@ imports:
     types:
       - name: calibration.Extrinsic
       - name: calibration.Intrinsic
-      # - name: file.Image
-      # - name: file.PointCloudBin
-      - name: file.RemoteFile
+      - name: file.Image
+      - name: file.PointCloudBin
       - name: label.Box2D
       - name: label.Box3D
       - name: sensor.Camera
@@ -21,8 +20,7 @@ fields:
         type: string
 
       - name: image
-        type: file.RemoteFile
-        # type: file.Image
+        type: file.Image
 
       - name: box2ds
         type: label.Box2D
@@ -62,8 +60,7 @@ fields:
         type: string
 
       - name: image
-        # type: file.Image
-        type: file.RemoteFile
+        type: file.Image
 
       - name: extrinsic
         type: calibration.Extrinsic
@@ -78,8 +75,7 @@ fields:
         type: string
 
       - name: point_cloud
-        type: file.RemoteFile
-        # type: file.PointCloudBin
+        type: file.PointCloudBin
 
       - name: box3ds
         type: label.Box3D
