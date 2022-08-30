@@ -2,6 +2,7 @@
 type: template
 parameters:
   - name: categories
+    default: null
 
   - name: category_delimiter
     default: null
