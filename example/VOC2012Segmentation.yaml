@@ -3,10 +3,7 @@ imports:
   - repo: https://github.com/Project-OpenBytes/portex-standard@main
     types:
       - name: file.Image
-      # - name: label.file.InstanceMask
-      - name: label.file.RemoteInstanceMask
-      # - name: label.file.SemanticMask
-      - name: label.file.RemoteSemanticMask
+      - name: label.Mask
 
 type: record
 fields:
@@ -17,9 +14,8 @@ fields:
     type: file.Image
 
   - name: semantic_mask
-    type: label.file.RemoteSemanticMask
-    # type: label.file.SemanticMask
-    category_ids:
+    type: label.Mask
+    categories:
       0: background
       1: aeroplane
       2: bicycle
@@ -44,8 +40,7 @@ fields:
       255: void
 
   - name: instance_mask
-    type: label.file.RemoteInstanceMask
-    # type: label.file.InstanceMask
-    category_ids:
+    type: label.Mask
+    categories:
       0: background
       255: void
