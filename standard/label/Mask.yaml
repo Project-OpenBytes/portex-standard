@@ -1,0 +1,17 @@
+---
+type: template
+parameters:
+  - name: categories
+
+  - name: category_delimiter
+    default: null
+
+  - name: decoders
+    default: null
+
+  - name: is_tracking
+    default: false
+    options: [true, false]
+
+declaration:
+  type: file.Image

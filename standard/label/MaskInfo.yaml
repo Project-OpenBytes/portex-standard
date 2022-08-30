@@ -1,0 +1,29 @@
+---
+type: template
+parameters:
+  - name: categories
+    default: null
+
+  - name: category_delimiter
+    default: null
+
+  - name: attributes
+    default: null
+
+declaration:
+  type: array
+  items:
+    type: record
+    fields:
+      - name: instance_id
+        type: int32
+
+      - name: category
+        type: label.Category
+        categories: $categories
+        category_delimiter: $category_delimiter
+
+      - name: attribute
+        exist_if: $attributes
+        type: label.Attribute
+        attributes: $attributes
