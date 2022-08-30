@@ -1,0 +1,62 @@
+---
+imports:
+  - repo: https://github.com/Project-OpenBytes/portex-standard@main
+    types:
+      - name: file.Image
+      - name: label.Mask
+      - name: label.MultiPolygon
+
+type: record
+fields:
+  - name: filename
+    type: string
+
+  - name: image
+    type: file.Image
+
+  - name: multi_polygons
+    type: label.MultiPolygon
+    categories:
+      - bicycle
+      - bus
+      - car
+      - motorcycle
+      - other person
+      - other vehicle
+      - pedestrian
+      - rider
+      - trailer
+      - truck
+
+    attributes:
+      - name: crowd
+        type: boolean
+
+      - name: occluded
+        type: boolean
+
+      - name: truncated
+        type: boolean
+
+  - name: instance_mask
+    type: label.Mask
+    is_tracking: true
+    categories:
+      0: background
+      1: pedestrian
+      2: rider
+      3: car
+      4: truck
+      5: bus
+      6: train
+      7: motorcycle
+      8: bicycle
+
+    decoders:
+      category_id: R
+      instance_id: B << 8 + A
+      attributes:
+        truncated: G >> 3 & 0x01
+        occluded: G >> 2 & 0x01
+        crowd: G >> 1 & 0x01
+        ignored: G >> 0 & 0x01

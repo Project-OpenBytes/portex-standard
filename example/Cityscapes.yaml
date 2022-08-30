@@ -1,0 +1,103 @@
+---
+imports:
+  - repo: https://github.com/Project-OpenBytes/portex-standard@main
+    types:
+      - name: file.Image
+      - name: label.Mask
+      - name: label.Polygon
+
+type: record
+fields:
+  - name: filename
+    type: string
+
+  - name: image
+    type: file.Image
+
+  - name: polygons
+    type: label.Polygon
+    category_delimiter: .
+    categories:
+      - void.unlabeled
+      - void.ego vehicle
+      - void.rectification border
+      - void.out of roi
+      - void.static
+      - void.dynamic
+      - void.ground
+      - flat.road
+      - flat.sidewalk
+      - flat.parking
+      - flat.rail track
+      - construction.building
+      - construction.wall
+      - construction.fence
+      - construction.guard rail
+      - construction.bridge
+      - construction.tunnel
+      - object.pole
+      - object.polegroup
+      - object.traffic light
+      - object.traffic sign
+      - nature.vegetation
+      - nature.terrain
+      - sky.sky
+      - human.person
+      - human.rider
+      - vehicle.car
+      - vehicle.truck
+      - vehicle.bus
+      - vehicle.caravan
+      - vehicle.trailer
+      - vehicle.train
+      - vehicle.motorcycle
+      - vehicle.bicycle
+      - vehicle.license plate
+
+  - name: semantic_mask
+    type: label.Mask
+    category_delimiter: .
+    categories: &categories
+      0: void.unlabeled
+      1: void.ego vehicle
+      2: void.rectification border
+      3: void.out of roi
+      4: void.static
+      5: void.dynamic
+      6: void.ground
+      7: flat.road
+      8: flat.sidewalk
+      9: flat.parking
+      10: flat.rail track
+      11: construction.building
+      12: construction.wall
+      13: construction.fence
+      14: construction.guard rail
+      15: construction.bridge
+      16: construction.tunnel
+      17: object.pole
+      18: object.polegroup
+      19: object.traffic light
+      20: object.traffic sign
+      21: nature.vegetation
+      22: nature.terrain
+      23: sky.sky
+      24: human.person
+      25: human.rider
+      26: vehicle.car
+      27: vehicle.truck
+      28: vehicle.bus
+      29: vehicle.caravan
+      30: vehicle.trailer
+      31: vehicle.train
+      32: vehicle.motorcycle
+      33: vehicle.bicycle
+      -1: vehicle.license plate
+
+  - name: panoptic_mask
+    type: label.Mask
+    category_delimiter: .
+    categories: *categories
+    decoders:
+      category_id: I if I < 1000 else I // 1000
+      instance_id: I

@@ -1,0 +1,291 @@
+---
+imports:
+  - repo: https://github.com/Project-OpenBytes/portex-standard@main
+    types:
+      - name: file.Image
+      - name: label.Mask
+      - name: label.MaskInfo
+      - name: label.Polygon
+
+type: record
+fields:
+  - name: filename
+    type: string
+
+  - name: image
+    type: file.Image
+
+  - name: polygons
+    type: label.Polygon
+    category_delimiter: --
+    categories:
+      - animal--bird
+      - animal--ground-animal
+      - construction--barrier--ambiguous
+      - construction--barrier--concrete-block
+      - construction--barrier--curb
+      - construction--barrier--fence
+      - construction--barrier--guard-rail
+      - construction--barrier--other-barrier
+      - construction--barrier--road-median
+      - construction--barrier--road-side
+      - construction--barrier--separator
+      - construction--barrier--temporary
+      - construction--barrier--wall
+      - construction--flat--bike-lane
+      - construction--flat--crosswalk-plain
+      - construction--flat--curb-cut
+      - construction--flat--driveway
+      - construction--flat--parking
+      - construction--flat--parking-aisle
+      - construction--flat--pedestrian-area
+      - construction--flat--rail-track
+      - construction--flat--road
+      - construction--flat--road-shoulder
+      - construction--flat--service-lane
+      - construction--flat--sidewalk
+      - construction--flat--traffic-island
+      - construction--structure--bridge
+      - construction--structure--building
+      - construction--structure--garage
+      - construction--structure--tunnel
+      - human--person--individual
+      - human--person--person-group
+      - human--rider--bicyclist
+      - human--rider--motorcyclist
+      - human--rider--other-rider
+      - marking--continuous--dashed
+      - marking--continuous--solid
+      - marking--continuous--zigzag
+      - marking--discrete--ambiguous
+      - marking--discrete--arrow--left
+      - marking--discrete--arrow--other
+      - marking--discrete--arrow--right
+      - marking--discrete--arrow--split-left-or-straight
+      - marking--discrete--arrow--split-right-or-straight
+      - marking--discrete--arrow--straight
+      - marking--discrete--crosswalk-zebra
+      - marking--discrete--give-way-row
+      - marking--discrete--give-way-single
+      - marking--discrete--hatched--chevron
+      - marking--discrete--hatched--diagonal
+      - marking--discrete--other-marking
+      - marking--discrete--stop-line
+      - marking--discrete--symbol--bicycle
+      - marking--discrete--symbol--other
+      - marking--discrete--text
+      - marking-only--continuous--dashed
+      - marking-only--discrete--crosswalk-zebra
+      - marking-only--discrete--other-marking
+      - marking-only--discrete--text
+      - nature--mountain
+      - nature--sand
+      - nature--sky
+      - nature--snow
+      - nature--terrain
+      - nature--vegetation
+      - nature--water
+      - object--banner
+      - object--bench
+      - object--bike-rack
+      - object--catch-basin
+      - object--cctv-camera
+      - object--fire-hydrant
+      - object--junction-box
+      - object--mailbox
+      - object--manhole
+      - object--parking-meter
+      - object--phone-booth
+      - object--pothole
+      - object--sign--advertisement
+      - object--sign--ambiguous
+      - object--sign--back
+      - object--sign--information
+      - object--sign--other
+      - object--sign--store
+      - object--street-light
+      - object--support--pole
+      - object--support--pole-group
+      - object--support--traffic-sign-frame
+      - object--support--utility-pole
+      - object--traffic-cone
+      - object--traffic-light--general-single
+      - object--traffic-light--pedestrians
+      - object--traffic-light--general-upright
+      - object--traffic-light--general-horizontal
+      - object--traffic-light--cyclists
+      - object--traffic-light--other
+      - object--traffic-sign--ambiguous
+      - object--traffic-sign--back
+      - object--traffic-sign--direction-back
+      - object--traffic-sign--direction-front
+      - object--traffic-sign--front
+      - object--traffic-sign--information-parking
+      - object--traffic-sign--temporary-back
+      - object--traffic-sign--temporary-front
+      - object--trash-can
+      - object--vehicle--bicycle
+      - object--vehicle--boat
+      - object--vehicle--bus
+      - object--vehicle--car
+      - object--vehicle--caravan
+      - object--vehicle--motorcycle
+      - object--vehicle--on-rails
+      - object--vehicle--other-vehicle
+      - object--vehicle--trailer
+      - object--vehicle--truck
+      - object--vehicle--vehicle-group
+      - object--vehicle--wheeled-slow
+      - object--water-valve
+      - void--car-mount
+      - void--dynamic
+      - void--ego-vehicle
+      - void--ground
+      - void--static
+      - void--unlabeled
+
+  - name: instance_mask
+    type: label.Mask
+    category_delimiter: --
+    categories: &categories
+      0: animal--bird
+      1: animal--ground-animal
+      2: construction--barrier--ambiguous
+      3: construction--barrier--concrete-block
+      4: construction--barrier--curb
+      5: construction--barrier--fence
+      6: construction--barrier--guard-rail
+      7: construction--barrier--other-barrier
+      8: construction--barrier--road-median
+      9: construction--barrier--road-side
+      10: construction--barrier--separator
+      11: construction--barrier--temporary
+      12: construction--barrier--wall
+      13: construction--flat--bike-lane
+      14: construction--flat--crosswalk-plain
+      15: construction--flat--curb-cut
+      16: construction--flat--driveway
+      17: construction--flat--parking
+      18: construction--flat--parking-aisle
+      19: construction--flat--pedestrian-area
+      20: construction--flat--rail-track
+      21: construction--flat--road
+      22: construction--flat--road-shoulder
+      23: construction--flat--service-lane
+      24: construction--flat--sidewalk
+      25: construction--flat--traffic-island
+      26: construction--structure--bridge
+      27: construction--structure--building
+      28: construction--structure--garage
+      29: construction--structure--tunnel
+      30: human--person--individual
+      31: human--person--person-group
+      32: human--rider--bicyclist
+      33: human--rider--motorcyclist
+      34: human--rider--other-rider
+      35: marking--continuous--dashed
+      36: marking--continuous--solid
+      37: marking--continuous--zigzag
+      38: marking--discrete--ambiguous
+      39: marking--discrete--arrow--left
+      40: marking--discrete--arrow--other
+      41: marking--discrete--arrow--right
+      42: marking--discrete--arrow--split-left-or-straight
+      43: marking--discrete--arrow--split-right-or-straight
+      44: marking--discrete--arrow--straight
+      45: marking--discrete--crosswalk-zebra
+      46: marking--discrete--give-way-row
+      47: marking--discrete--give-way-single
+      48: marking--discrete--hatched--chevron
+      49: marking--discrete--hatched--diagonal
+      50: marking--discrete--other-marking
+      51: marking--discrete--stop-line
+      52: marking--discrete--symbol--bicycle
+      53: marking--discrete--symbol--other
+      54: marking--discrete--text
+      55: marking-only--continuous--dashed
+      56: marking-only--discrete--crosswalk-zebra
+      57: marking-only--discrete--other-marking
+      58: marking-only--discrete--text
+      59: nature--mountain
+      60: nature--sand
+      61: nature--sky
+      62: nature--snow
+      63: nature--terrain
+      64: nature--vegetation
+      65: nature--water
+      66: object--banner
+      67: object--bench
+      68: object--bike-rack
+      69: object--catch-basin
+      70: object--cctv-camera
+      71: object--fire-hydrant
+      72: object--junction-box
+      73: object--mailbox
+      74: object--manhole
+      75: object--parking-meter
+      76: object--phone-booth
+      77: object--pothole
+      78: object--sign--advertisement
+      79: object--sign--ambiguous
+      80: object--sign--back
+      81: object--sign--information
+      82: object--sign--other
+      83: object--sign--store
+      84: object--street-light
+      85: object--support--pole
+      86: object--support--pole-group
+      87: object--support--traffic-sign-frame
+      88: object--support--utility-pole
+      89: object--traffic-cone
+      90: object--traffic-light--general-single
+      91: object--traffic-light--pedestrians
+      92: object--traffic-light--general-upright
+      93: object--traffic-light--general-horizontal
+      94: object--traffic-light--cyclists
+      95: object--traffic-light--other
+      96: object--traffic-sign--ambiguous
+      97: object--traffic-sign--back
+      98: object--traffic-sign--direction-back
+      99: object--traffic-sign--direction-front
+      100: object--traffic-sign--front
+      101: object--traffic-sign--information-parking
+      102: object--traffic-sign--temporary-back
+      103: object--traffic-sign--temporary-front
+      104: object--trash-can
+      105: object--vehicle--bicycle
+      106: object--vehicle--boat
+      107: object--vehicle--bus
+      108: object--vehicle--car
+      109: object--vehicle--caravan
+      110: object--vehicle--motorcycle
+      111: object--vehicle--on-rails
+      112: object--vehicle--other-vehicle
+      113: object--vehicle--trailer
+      114: object--vehicle--truck
+      115: object--vehicle--vehicle-group
+      116: object--vehicle--wheeled-slow
+      117: object--water-valve
+      118: void--car-mount
+      119: void--dynamic
+      120: void--ego-vehicle
+      121: void--ground
+      122: void--static
+      123: void--unlabeled
+
+    decoders:
+      category_id: I / 256
+      instance_id: I % 256
+
+  - name: panoptic_mask
+    type: record
+    fields:
+      - name: mask
+        type: label.Mask
+        decoders:
+          instance_id: R + 256 * G + 256 * 256 * B
+
+      - name: info
+        type: label.MaskInfo
+        category_delimiter: .
+        categories: *categories

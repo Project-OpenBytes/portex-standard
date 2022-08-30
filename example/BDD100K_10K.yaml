@@ -1,0 +1,147 @@
+---
+imports:
+  - repo: https://github.com/Project-OpenBytes/portex-standard@main
+    types:
+      - name: file.Image
+      - name: label.Mask
+      - name: label.Polygon
+
+type: record
+fields:
+  - name: filename
+    type: string
+
+  - name: image
+    type: file.Image
+
+  - name: polygons
+    type: label.Polygon
+    categories:
+      - banner
+      - bicycle
+      - billboard
+      - bridge
+      - building
+      - bus stop
+      - bus
+      - car
+      - caravan
+      - dynamic
+      - ego vehicle
+      - fence
+      - fire hydrant
+      - garage
+      - ground
+      - guard rail
+      - lane divider
+      - mail box
+      - motorcycle
+      - parking sign
+      - parking
+      - person
+      - pole
+      - polegroup
+      - rail track
+      - rider
+      - road
+      - sidewalk
+      - sky
+      - static
+      - street light
+      - terrain
+      - traffic cone
+      - traffic device
+      - traffic light
+      - traffic sign frame
+      - traffic sign
+      - trailer
+      - train
+      - trash can
+      - truck
+      - tunnel
+      - unlabeled
+      - vegetation
+      - wall
+
+  - name: semantic_mask
+    type: label.Mask
+    categories: &categories
+      0: road
+      1: sidewalk
+      2: building
+      3: wall
+      4: fence
+      5: pole
+      6: traffic light
+      7: traffic sign
+      8: vegetation
+      9: terrain
+      10: sky
+      11: person
+      12: rider
+      13: car
+      14: truck
+      15: bus
+      16: train
+      17: motorcycle
+      18: bicycle
+      255: unknown
+
+  - name: instance_mask
+    type: label.Mask
+    categories: *categories
+    decoders: &decoders
+      category_id: R
+      instance_id: B << 8 + A
+      attributes:
+        truncated: G >> 3 & 0x01
+        occluded: G >> 2 & 0x01
+        crowd: G >> 1 & 0x01
+        ignored: G >> 0 & 0x01
+
+  - name: panoptic_mask
+    type: label.Mask
+    categories: # 1-30 are stuffs, 31-40 are things
+      0: unlabeled
+      1: dynamic
+      2: ego vehicle
+      3: ground
+      4: static
+      5: parking
+      6: rail track
+      7: road
+      8: sidewalk
+      9: bridge
+      10: building
+      11: fence
+      12: garage
+      13: guard rail
+      14: tunnel
+      15: wall
+      16: banner
+      17: billboard
+      18: lane divider
+      19: parking sign
+      20: pole
+      21: polegroup
+      22: street light
+      23: traffic cone
+      24: traffic device
+      25: traffic light
+      26: traffic sign
+      27: traffic sign frame
+      28: terrain
+      29: vegetation
+      30: sky
+      31: person
+      32: rider
+      33: bicycle
+      34: bus
+      35: car
+      36: caravan
+      37: motorcycle
+      38: trailer
+      39: train
+      40: truck
+
+    decoders: *decoders
