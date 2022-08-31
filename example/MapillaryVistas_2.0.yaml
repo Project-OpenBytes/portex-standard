@@ -287,5 +287,5 @@ fields:
 
       - name: info
         type: label.MaskInfo
-        category_delimiter: .
+        category_delimiter: --
         categories: *categories
