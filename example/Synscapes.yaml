@@ -17,19 +17,6 @@ fields:
 
   - name: box2ds
     type: label.Box2D
-    categories:
-      - person
-      - rider
-      - car
-      - truck
-      - bus
-      - train
-      - motorcyclist
-      - bicyclist
-
-  - name: semantic_mask
-    type: label.Mask
-    category_delimiter: .
     categories: &categories
       24: person
       25: rider
@@ -39,6 +26,11 @@ fields:
       31: train
       32: motorcyclist
       33: bicyclist
+
+  - name: semantic_mask
+    type: label.Mask
+    category_delimiter: .
+    categories: *categories
 
   - name: instance_mask
     type: record
