@@ -23,7 +23,8 @@ fields:
         is_continous: true
 
       - name: timestamp
-        type: int32
+        type: timestamp
+        unit: ns
 
       - name: box3ds
         type: array
@@ -60,7 +61,8 @@ fields:
         is_continous: true
 
       - name: timestamp
-        type: int32
+        type: timestamp
+        unit: ns
 
       - name: extrinsic
         type: calibration.Extrinsic

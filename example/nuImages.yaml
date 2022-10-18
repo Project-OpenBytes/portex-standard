@@ -22,7 +22,8 @@ fields:
         is_continous: true
 
       - name: timestamp
-        type: int32
+        type: timestamp
+        unit: us
 
       - name: box2ds
         type: array

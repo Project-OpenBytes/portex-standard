@@ -26,7 +26,8 @@ fields:
         fields: [X, Y, Z, Intensity, Ring]
 
       - name: timestamp
-        type: int32
+        type: timestamp
+        unit: us
 
       - name: box3ds
         type: array
@@ -95,7 +96,8 @@ fields:
         is_continous: true
 
       - name: timestamp
-        type: int32
+        type: timestamp
+        unit: us
 
       - name: extrinsic
         type: calibration.Extrinsic
@@ -134,7 +136,8 @@ fields:
         is_continous: true
 
       - name: timestamp
-        type: int32
+        type: timestamp
+        unit: us
 
       - name: extrinsic
         type: calibration.Extrinsic
