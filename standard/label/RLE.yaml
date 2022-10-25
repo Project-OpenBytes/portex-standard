@@ -1,6 +1,9 @@
 ---
 type: template
 parameters:
+  - name: instance_id
+    default: null
+
   - name: categories
     default: null
 
@@ -10,6 +13,9 @@ parameters:
   - name: attributes
     default: null
 
+  - name: is_tracking
+    default: false
+
 declaration:
   type: label._Label
   geometry:
@@ -18,6 +24,7 @@ declaration:
       items:
         type: int32
 
+  instance_id: $instance_id
   categories: $categories
   category_delimiter: $category_delimiter
   attributes: $attributes

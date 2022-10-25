@@ -5,6 +5,9 @@ parameters:
     default:
       type: float32
 
+  - name: instance_id
+    default: null
+
   - name: categories
     default: null
 
@@ -13,6 +16,9 @@ parameters:
 
   - name: attributes
     default: null
+
+  - name: is_tracking
+    default: false
 
 declaration:
   type: label._Label
@@ -23,6 +29,7 @@ declaration:
         type: geometry.PointList2D
         coords: $coords
 
+  instance_id: $instance_id
   categories: $categories
   category_delimiter: $category_delimiter
   attributes: $attributes

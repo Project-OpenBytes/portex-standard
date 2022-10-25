@@ -16,6 +16,9 @@ parameters:
   - name: visible
     default: null
 
+  - name: instance_id
+    default: null
+
   - name: categories
     default: null
 
@@ -24,6 +27,9 @@ parameters:
 
   - name: attributes
     default: null
+
+  - name: is_tracking
+    default: false
 
 declaration:
   type: label._Label
@@ -36,6 +42,7 @@ declaration:
         coords: $coords
         visible: $visible
 
+  instance_id: $instance_id
   categories: $categories
   category_delimiter: $category_delimiter
   attributes: $attributes
