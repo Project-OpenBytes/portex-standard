@@ -30,6 +30,7 @@ parameters:
 
   - name: is_tracking
     default: false
+    options: [true, false]
 
 declaration:
   type: label._Label
