@@ -1,0 +1,17 @@
+---
+type: template
+parameters:
+  - name: coords
+    default:
+      type: float32
+
+declaration:
+  type: record
+  fields:
+    - name: translation
+      type: geometry.Vector3D
+      coords: $coords
+
+    - name: rotation
+      type: geometry.Quaternion
+      coords: $coords

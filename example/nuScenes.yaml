@@ -7,6 +7,7 @@ imports:
       - name: file.Image
       - name: file.PointCloud
       - name: file.PointCloudBin
+      - name: geometry.Pose
       - name: label.Box3D
       - name: sensor.Camera
       - name: sensor.Lidar
@@ -14,6 +15,9 @@ imports:
 
 type: record
 fields:
+  - name: pose
+    type: geometry.Pose
+
   - name: LIDAR_TOP
     type: sensor.Lidar
     fields:
