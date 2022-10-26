@@ -23,29 +23,34 @@ fields:
         type: file.Image
 
       - name: box2ds
-        type: label.Box2D
-        categories:
-          - Car
-          - Cyclist
-          - DontCare
-          - Misc
-          - Pedestrian
-          - Truck
-          - Van
+        type: array
+        items:
+          type: label.Box2D
+          instance_id:
+            type: int32
 
-        attributes:
-          - name: truncated
-            type: boolean
+          categories:
+            - Car
+            - Cyclist
+            - DontCare
+            - Misc
+            - Pedestrian
+            - Truck
+            - Van
 
-          - name: occluded
-            values:
-              - 0 # fully visible
-              - 1 # partly occluded
-              - 2 # largely occluded
-              - 3 # unknown
+          attributes:
+            - name: truncated
+              type: boolean
 
-          - name: alpha
-            type: float32
+            - name: occluded
+              values:
+                - 0 # fully visible
+                - 1 # partly occluded
+                - 2 # largely occluded
+                - 3 # unknown
+
+            - name: alpha
+              type: float32
 
       - name: extrinsic
         type: calibration.Extrinsic
@@ -78,14 +83,19 @@ fields:
         type: file.PointCloudBin
 
       - name: box3ds
-        type: label.Box3D
-        categories:
-          - Car
-          - Cyclist
-          - Misc
-          - Pedestrian
-          - Truck
-          - Van
+        type: array
+        items:
+          type: label.Box3D
+          instance_id:
+            type: int32
+
+          categories:
+            - Car
+            - Cyclist
+            - Misc
+            - Pedestrian
+            - Truck
+            - Van
 
       - name: extrinsic
         type: calibration.Extrinsic

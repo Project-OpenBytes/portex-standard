@@ -30,6 +30,10 @@ fields:
         type: array
         items:
           type: label.Box3D
+          is_tracking: true
+          instance_id:
+            type: string
+
           categories:
             - VEHICLE
             - PEDESTRIAN

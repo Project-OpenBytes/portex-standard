@@ -23,6 +23,9 @@ fields:
     type: array
     items:
       type: label.Box2D
+      instance_id:
+        type: int32
+
       category_delimiter: .
       categories: &categories
         - person.person
@@ -163,6 +166,9 @@ fields:
     type: array
     items:
       type: label.Keypoints2D
+      instance_id:
+        type: int32
+
       category_delimiter: .
       categories:
         - person.persion
@@ -216,6 +222,9 @@ fields:
     type: array
     items:
       type: label.MultiPolygon
+      instance_id:
+        type: int32
+
       category_delimiter: .
       categories: *categories
 
@@ -223,6 +232,9 @@ fields:
     type: array
     items:
       type: label.RLE
+      instance_id:
+        type: int32
+
       category_delimiter: .
       categories: *categories
 
