@@ -1,0 +1,45 @@
+---
+imports:
+  - repo: https://github.com/Project-OpenBytes/portex-standard@main
+    types:
+      - name: file.Image
+      - name: label.Box2D
+
+type: record
+fields:
+  - name: filename
+    type: string
+
+  - name: image
+    type: file.Image
+
+  - name: box2ds
+    type: array
+    items:
+      type: label.Box2D
+      is_tracking: true
+      instance_id:
+        type: string
+
+      categories:
+        - bicycle
+        - bus
+        - car
+        - motorcycle
+        - other person
+        - other vehicle
+        - pedestrian
+        - rider
+        - trailer
+        - train
+        - truck
+
+      attributes:
+        - name: crowd
+          type: boolean
+
+        - name: occluded
+          type: boolean
+
+        - name: truncated
+          type: boolean
