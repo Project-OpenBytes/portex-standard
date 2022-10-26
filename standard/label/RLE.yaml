@@ -1,6 +1,10 @@
 ---
 type: template
 parameters:
+  - name: is_tracking
+    default: false
+    options: [true, false]
+
   - name: instance_id
     default: null
 
@@ -12,10 +16,6 @@ parameters:
 
   - name: attributes
     default: null
-
-  - name: is_tracking
-    default: false
-    options: [true, false]
 
 declaration:
   type: label._Label

@@ -1,6 +1,10 @@
 ---
 type: template
 parameters:
+  - name: is_tracking
+    default: false
+    options: [true, false]
+
   - name: categories
     default: null
 
@@ -9,10 +13,6 @@ parameters:
 
   - name: decoders
     default: null
-
-  - name: is_tracking
-    default: false
-    options: [true, false]
 
 declaration:
   type: file.Image
