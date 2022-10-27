@@ -5,6 +5,7 @@ imports:
       - name: calibration.Extrinsic
       - name: calibration.Intrinsic
       - name: file.Image
+      - name: geometry.Pose
       - name: label.Box2D
       - name: label.RLE
       - name: sensor.Camera
@@ -83,6 +84,9 @@ fields:
           category_delimiter: .
           categories: *categories
           attributes: *attributes
+
+      - name: pose
+        type: geometry.Pose
 
       - name: extrinsic
         type: calibration.Extrinsic
