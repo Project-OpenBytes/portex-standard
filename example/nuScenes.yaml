@@ -15,9 +15,6 @@ imports:
 
 type: record
 fields:
-  - name: pose
-    type: geometry.Pose
-
   - name: LIDAR_TOP
     type: sensor.Lidar
     fields:
@@ -90,6 +87,9 @@ fields:
                 - v60-80  # visibility of whole object is between 60 and 80%
                 - v80-100 # visibility of whole object is between 80 and 100%
 
+      - name: pose
+        type: geometry.Pose
+
       - name: extrinsic
         type: calibration.Extrinsic
 
@@ -106,6 +106,9 @@ fields:
       - name: timestamp
         type: timestamp
         unit: us
+
+      - name: pose
+        type: geometry.Pose
 
       - name: extrinsic
         type: calibration.Extrinsic
@@ -146,6 +149,9 @@ fields:
       - name: timestamp
         type: timestamp
         unit: us
+
+      - name: pose
+        type: geometry.Pose
 
       - name: extrinsic
         type: calibration.Extrinsic
